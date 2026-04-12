@@ -1,1 +1,568 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katrin Workert – Strategische Immobilienberatung</title>
+  <meta name="description" content="Unabhängige, honorarbasierte Immobilienberatung für private Eigentümer und Familien. Diplom-Sachverständige (DIA). Deutschlandweit.">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.katrin-workert.de/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.katrin-workert.de/">
+  <meta property="og:title" content="Katrin Workert – Strategische Immobilienberatung">
+  <meta property="og:description" content="Unabhängige, honorarbasierte Immobilienberatung für private Eigentümer und Familien. Diplom-Sachverständige (DIA). Deutschlandweit.">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Katrin Workert – Strategische Immobilienberatung">
+  <meta name="twitter:description" content="Unabhängige, honorarbasierte Immobilienberatung für private Eigentümer und Familien. Deutschlandweit.">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Katrin Workert – Strategische Immobilienberatung",
+    "description": "Unabhängige, honorarbasierte strategische Immobilienberatung für private Eigentümer und Familien. Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten.",
+    "url": "https://www.katrin-workert.de",
+    "telephone": "[PLATZHALTER Telefonnummer]",
+    "email": "kontakt@katrin-workert.de",
+    "areaServed": {"@type": "Country", "name": "Deutschland"},
+    "serviceArea": {"@type": "AdministrativeArea", "name": "Südniedersachsen"},
+    "founder": {
+      "@type": "Person",
+      "name": "Katrin Workert",
+      "jobTitle": "Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten",
+      "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Deutsche Immobilien-Akademie an der Universität Freiburg"}]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Beratungsleistungen",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategischer Immobilien-Check", "description": "Fundierte Einschätzung zu einer einzelnen Immobilie als Teil eines bestehenden Vermögens."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategische Bestandsanalyse", "description": "Gesamtstrategische Analyse für Eigentümer oder Familien mit mehreren Immobilien."}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Entscheidungsbegleitung bei komplexen Immobilienfragen", "description": "Strukturierte Begleitung für Erbengemeinschaften und Familien."}}
+      ]
+    },
+    "knowsAbout": ["Immobilienbewertung", "Grundstücksbewertung", "Erbschaft Immobilien", "Erbengemeinschaft", "WEG-Verwaltung", "Immobilienstrategie", "Honorarberatung Immobilien"]
+  }
+  <\/script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:      #1C2B35;
+      --ink-mid:  #3D5260;
+      --ink-soft: #6B8290;
+      --gold:     #B8935A;
+      --gold-lt:  #D4AA78;
+      --paper:    #F7F5F2;
+      --white:    #FFFFFF;
+      --rule:     #E2DDD8;
+      --serif:    'Cormorant Garamond', Georgia, serif;
+      --sans:     'DM Sans', system-ui, sans-serif;
+      --max:      1140px;
+      --pad:      clamp(1.5rem, 5vw, 4rem);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 300; color: var(--ink); background: var(--white); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); padding: 0 var(--pad); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-brand { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+    .nav-name { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; color: var(--ink); line-height: 1.2; }
+    .nav-dia { font-size: 0.58rem; font-weight: 300; color: var(--ink-soft); line-height: 1.3; max-width: 400px; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 400; color: var(--ink-mid); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s ease; transform-origin: left; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { color: var(--white) !important; background: var(--ink); padding: 0.55rem 1.4rem; border-radius: 2px; transition: background 0.2s !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold) !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--ink); }
+
+    /* HERO */
+    .hero { padding-top: 72px; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+    .hero-left { background: var(--paper); display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem, 8vw, 7rem) var(--pad) clamp(3rem, 8vw, 7rem) clamp(2rem, 6vw, 6rem); }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .hero-h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.15; color: var(--ink); margin-bottom: 1.75rem; }
+    .hero-lead { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.75; max-width: 44ch; margin-bottom: 1.5rem; }
+    .hero-lead-2 { font-size: 0.92rem; font-weight: 300; color: var(--ink-soft); line-height: 1.7; max-width: 44ch; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--ink); padding: 0.9rem 2rem; border-radius: 2px; border: 1px solid var(--ink); transition: background 0.25s; }
+    .btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+    .btn-secondary { display: inline-block; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; color: var(--ink); background: transparent; padding: 0.9rem 2rem; border-radius: 2px; border: 1px solid var(--ink); transition: all 0.25s; }
+    .btn-secondary:hover { background: var(--ink); color: var(--white); }
+
+    /* HERO RIGHT – badge panel */
+    .hero-right { background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(3rem, 6vw, 5rem); position: relative; gap: 2rem; }
+    .hero-right::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #243442 0%, #1C2B35 60%, #162229 100%); }
+    .hero-badge-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .hero-badge-link { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .hero-badge-link:hover .hero-badge-img { filter: drop-shadow(0 4px 28px rgba(184,147,90,0.5)); transform: translateY(-2px); }
+    .hero-badge-img { width: min(220px, 50%); height: auto; filter: drop-shadow(0 4px 24px rgba(0,0,0,0.4)); transition: filter 0.25s, transform 0.25s; }
+    .hero-badge-verify { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.08em; color: var(--gold-lt); text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
+    .hero-badge-link:hover .hero-badge-verify { opacity: 1; }
+    .hero-badge-caption { position: relative; z-index: 1; text-align: center; }
+    .hero-badge-caption p { font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; line-height: 1.6; }
+    .hero-badge-caption strong { display: block; font-size: 0.82rem; font-weight: 400; color: var(--gold-lt); letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+    .hero-honorar { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.75rem; width: 100%; text-align: center; }
+    .hero-honorar-label { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
+    .hero-honorar-text { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+    /* SHARED */
+    section { padding: clamp(4rem, 8vw, 7rem) var(--pad); }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-eyebrow { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+    .section-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .section-h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .section-lead { font-size: 1rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; max-width: 56ch; }
+
+    /* SITUATIONEN */
+    #situationen { background: var(--paper); }
+    .situations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); margin-top: 3.5rem; border: 1px solid var(--rule); }
+    .situation-card { background: var(--white); padding: 2.5rem; transition: background 0.2s; }
+    .situation-card:hover { background: #FDFCFB; }
+    .situation-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--rule); line-height: 1; margin-bottom: 1rem; }
+    .situation-title { font-family: var(--serif); font-weight: 500; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.75rem; }
+    .situation-text { font-size: 0.9rem; font-weight: 300; color: var(--ink-mid); line-height: 1.7; }
+
+    /* LEISTUNGEN */
+    #leistungen { background: var(--white); }
+    .leistungen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .leistung-card { border: 1px solid var(--rule); padding: 2.5rem; position: relative; transition: border-color 0.3s; display: flex; flex-direction: column; }
+    .leistung-card:hover { border-color: var(--gold); }
+    .leistung-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); transform: scaleY(0); transition: transform 0.3s ease; transform-origin: top; }
+    .leistung-card:hover::before { transform: scaleY(1); }
+    .leistung-card--full { grid-column: 1 / -1; }
+    .leistung-card--full .leistung-list-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .leistung-type { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .leistung-title { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.2; }
+    .leistung-target { font-size: 0.82rem; font-weight: 300; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule); }
+    .leistung-desc { font-size: 0.92rem; font-weight: 300; color: var(--ink-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+    .leistung-list { list-style: none; margin-bottom: 1.75rem; }
+    .leistung-list li { font-size: 0.88rem; font-weight: 300; color: var(--ink-mid); padding: 0.45rem 0; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.5; }
+    .leistung-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .honorar-block { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+    .honorar-row { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.35rem; }
+    .honorar-label { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+    .honorar-value { font-family: var(--sans); font-size: 0.92rem; font-weight: 400; color: var(--ink-soft); }
+    .honorar-note { font-size: 0.75rem; font-weight: 300; color: var(--ink-soft); line-height: 1.5; opacity: 0.8; }
+
+    /* ARBEITSWEISE */
+    #arbeitsweise { background: var(--ink); color: var(--white); }
+    #arbeitsweise .section-h2 { color: var(--white); }
+    #arbeitsweise .section-lead { color: rgba(255,255,255,0.65); max-width: 60ch; }
+    #arbeitsweise .section-eyebrow { color: var(--gold-lt); }
+    #arbeitsweise .section-eyebrow::before { background: var(--gold-lt); }
+    .aw-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.12); }
+    .aw-item { padding: 2.5rem 2.5rem 2.5rem 0; border-right: 1px solid rgba(255,255,255,0.12); }
+    .aw-item:last-child { border-right: none; padding-right: 0; }
+    .aw-item + .aw-item { padding-left: 2.5rem; }
+    .aw-icon { width: 2rem; height: 2rem; margin-bottom: 1.25rem; opacity: 0.6; }
+    .aw-title { font-family: var(--serif); font-weight: 500; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
+    .aw-text { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* ÜBER MICH */
+    #ueber-mich { background: var(--paper); }
+    .ueber-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 5rem; align-items: start; }
+    .ueber-name { font-family: var(--serif); font-weight: 300; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--ink); margin-bottom: 0.4rem; line-height: 1.1; }
+    .ueber-dia { font-size: 0.72rem; font-weight: 300; color: var(--ink-soft); line-height: 1.5; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .ueber-text { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1.25rem; }
+    .ueber-quals { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .qual-item { display: flex; align-items: flex-start; gap: 1rem; font-size: 0.88rem; font-weight: 300; color: var(--ink-mid); line-height: 1.5; }
+    .qual-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 0.5em; }
+    .qual-link { font-size: 0.78rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; white-space: nowrap; }
+    .qual-link:hover { border-color: var(--gold); }
+    .ueber-photo { background: var(--rule); aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; }
+    .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; color: var(--ink-soft); }
+    .photo-placeholder svg { width: 48px; height: 48px; opacity: 0.35; }
+    .photo-placeholder span { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.45; }
+
+    /* KONTAKT */
+    #kontakt { background: var(--white); }
+    .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .kontakt-text { font-size: 0.95rem; font-weight: 300; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1.5rem; }
+    .kontakt-detail { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+    .kd-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .kd-label { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); min-width: 5rem; padding-top: 0.15em; }
+    .kd-value { font-size: 0.92rem; font-weight: 300; color: var(--ink); }
+    .kd-value a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+    .kd-value a:hover { border-color: var(--gold); }
+    .calendly-btn { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--ink); border: 1px solid var(--ink); padding: 0.85rem 1.75rem; border-radius: 2px; transition: all 0.25s; }
+    .calendly-btn:hover { background: var(--ink); color: var(--white); }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label { display: block; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.5rem; }
+    .form-input, .form-textarea, .form-select { width: 100%; font-family: var(--sans); font-size: 0.92rem; font-weight: 300; color: var(--ink); background: var(--white); border: 1px solid var(--rule); border-radius: 2px; padding: 0.85rem 1rem; transition: border-color 0.2s; outline: none; -webkit-appearance: none; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--ink); }
+    .form-textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+    .form-submit { width: 100%; font-family: var(--sans); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: var(--ink); border: 1px solid var(--ink); border-radius: 2px; padding: 1rem; cursor: pointer; transition: background 0.25s; }
+    .form-submit:hover { background: var(--gold); border-color: var(--gold); }
+    .form-success { display: none; background: #f0faf4; border: 1px solid #b8ddc9; border-radius: 2px; padding: 1.5rem; font-size: 0.9rem; color: #2a6645; line-height: 1.6; margin-top: 1rem; }
+    .datenschutz-label { display: flex; align-items: flex-start; gap: 0.6rem; cursor: pointer; font-size: 0.8rem; color: var(--ink-mid); line-height: 1.5; font-weight: 300; }
+    .datenschutz-label input { margin-top: 0.2em; flex-shrink: 0; accent-color: var(--ink); }
+
+    /* FOOTER */
+    footer { background: var(--ink); padding: 3rem var(--pad); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-inner { max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand { font-family: var(--serif); font-weight: 300; font-size: 1rem; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.75rem; font-weight: 300; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.3); }
+
+    /* ANIMATIONS */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 340px; }
+      .situations-grid { grid-template-columns: 1fr; }
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .leistung-card--full { grid-column: auto; }
+      .leistung-card--full .leistung-list-wrap { grid-template-columns: 1fr; }
+      .aw-grid { grid-template-columns: 1fr; }
+      .aw-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 2rem 0; }
+      .aw-item:last-child { border-bottom: none; }
+      .aw-item + .aw-item { padding-left: 0; }
+      .ueber-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ueber-photo { aspect-ratio: 4/3; max-height: 320px; }
+      .kontakt-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--rule); padding: 1.5rem var(--pad); gap: 1.25rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="nav-name">Katrin Workert</span>
+      <span class="nav-dia">Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#situationen">Situationen</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#arbeitsweise">Arbeitsweise</a></li>
+      <li><a href="#ueber-mich">Über mich</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Strategische Immobilienberatung</p>
+    <h1 class="hero-h1">Strategische Beratung für private Immobilienbesitzer.</h1>
+    <p class="hero-lead">Ich unterstütze Familien und private Eigentümer dabei, Immobilienentscheidungen strukturiert und risikobewusst zu treffen – unabhängig von Verkaufsinteressen.</p>
+    <p class="hero-lead-2">Meine Beratung verbindet Immobilienbewertung, Erfahrung aus der Praxis der Gebäudeschadenbeseitigung und wirtschaftliche Analyse – damit Sie eine fundierte Entscheidungsgrundlage erhalten, keine Meinung.</p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn-primary">Erstgespräch anfragen</a>
+      <a href="#leistungen" class="btn-secondary">Leistungen</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-badge-wrap">
+      <a href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener" class="hero-badge-link" title="Qualifikation verifizieren – Deutsche Immobilien-Akademie">
+        <img class="hero-badge-img" src="dia-badge-transparent.png" alt="Diplom-Sachverständige (DIA) – Deutsche Immobilien-Akademie an der Universität Freiburg">
+        <span class="hero-badge-verify">↗ Qualifikation verifizieren</span>
+      </a>
+      <div class="hero-badge-caption">
+        <strong>Qualifikationsnachweis</strong>
+        <p>Deutsche Immobilien-Akademie<br>an der Universität Freiburg</p>
+      </div>
+    </div>
+    <div class="hero-honorar">
+      <div class="hero-honorar-label">Arbeitsweise</div>
+      <div class="hero-honorar-text">Honorarbasiert · Unabhängig · Keine Provision<br>Beratung deutschlandweit</div>
+    </div>
+  </div>
+</section>
+
+<!-- SITUATIONEN -->
+<section id="situationen">
+  <div class="container">
+    <p class="section-eyebrow fade-in">Typische Situationen</p>
+    <h2 class="section-h2 fade-in">Wann meine Beratung<br>gefragt ist.</h2>
+    <p class="section-lead fade-in">Ich begleite Eigentümer und Familien in Situationen, in denen Immobilienentscheidungen besondere Tragweite haben.</p>
+    <div class="situations-grid">
+      <div class="situation-card fade-in">
+        <div class="situation-num">01</div>
+        <div class="situation-title">Einzelimmobilie strategisch einordnen</div>
+        <p class="situation-text">Sie besitzen Vermögen und prüfen, ob Kauf, Verkauf oder Halten einer einzelnen Immobilie wirtschaftlich sinnvoll ist – und wünschen sich dafür eine unabhängige Einschätzung ohne Verkaufsinteresse.</p>
+      </div>
+      <div class="situation-card fade-in">
+        <div class="situation-num">02</div>
+        <div class="situation-title">Immobilien geerbt</div>
+        <p class="situation-text">Sie haben Immobilien geerbt und müssen – oft gemeinsam mit anderen Erben – Entscheidungen treffen. Halten, vermieten, verkaufen? Ich schaffe eine fundierte Grundlage für diese Entscheidung.</p>
+      </div>
+      <div class="situation-card fade-in">
+        <div class="situation-num">03</div>
+        <div class="situation-title">Bestand überblicken</div>
+        <p class="situation-text">Sie besitzen mehrere Immobilien und möchten Klarheit über deren wirtschaftliche Situation und langfristige Entwicklung. Wo liegen Risiken, wo Chancen?</p>
+      </div>
+      <div class="situation-card fade-in">
+        <div class="situation-num">04</div>
+        <div class="situation-title">Gemeinsam entscheiden</div>
+        <p class="situation-text">Mehrere Beteiligte – Familienmitglieder, Miterben – müssen gemeinsam über Immobilien entscheiden. Ich begleite diesen Prozess strukturiert und unabhängig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="container">
+    <p class="section-eyebrow fade-in">Leistungen</p>
+    <h2 class="section-h2 fade-in">Drei Angebote.<br>Für jede Ausgangssituation das Richtige.</h2>
+    <p class="section-lead fade-in">Je nachdem, ob es um eine einzelne Immobilie, einen Gesamtbestand oder eine komplexe Entscheidung mit mehreren Beteiligten geht – meine Beratung ist auf Ihre Situation zugeschnitten.</p>
+    <div class="leistungen-grid">
+
+      <div class="leistung-card fade-in">
+        <p class="leistung-type">Angebot 01</p>
+        <h3 class="leistung-title">Strategischer Immobilien-Check</h3>
+        <p class="leistung-desc">Für Eigentümer, die eine einzelne Immobilie als Teil ihres Vermögens strategisch einordnen möchten – unabhängig vom Rat eines Maklers oder einer Bank.</p>
+        <p class="leistung-target">Typisch: Sie besitzen bereits Vermögen und prüfen, ob Kauf, Verkauf oder Halten dieser Immobilie wirtschaftlich sinnvoll ist.</p>
+        <ul class="leistung-list">
+          <li>Analyse der Immobilie und vorhandener Unterlagen</li>
+          <li>Einschätzung von Marktwert, Substanz und möglichen Risiken</li>
+          <li>Wirtschaftliche Einordnung der Entscheidung</li>
+          <li>Persönliches Beratungsgespräch mit klarer Handlungsempfehlung</li>
+        </ul>
+        <div class="honorar-block">
+          <div class="honorar-row"><span class="honorar-label">Honorar</span><span class="honorar-value">2.000 – 3.000 €</span></div>
+          <p class="honorar-note">Das genaue Honorar wird nach einem kostenfreien Erstgespräch schriftlich vereinbart.</p>
+        </div>
+      </div>
+
+      <div class="leistung-card fade-in">
+        <p class="leistung-type">Angebot 02</p>
+        <h3 class="leistung-title">Strategische Bestandsanalyse</h3>
+        <p class="leistung-desc">Für Eigentümer oder Familien mit mehreren Immobilien, die eine Gesamtstrategie für ihren Bestand entwickeln möchten.</p>
+        <p class="leistung-target">Typisch: Mehrere Immobilien in Familienbesitz, Unsicherheit über Rentabilität oder langfristige Entwicklung des Bestands.</p>
+        <ul class="leistung-list">
+          <li>Analyse aller vorhandenen Immobilien</li>
+          <li>Einschätzung von Marktwert, Substanz und Risiken</li>
+          <li>Wirtschaftliche Bewertung des Gesamtbestands</li>
+          <li>Entwicklung möglicher Szenarien (halten, verkaufen, umstrukturieren)</li>
+          <li>Strukturierte Entscheidungsgrundlage für Eigentümer oder Familien</li>
+        </ul>
+        <div class="honorar-block">
+          <div class="honorar-row"><span class="honorar-label">Honorar</span><span class="honorar-value">5.000 – 10.000 €</span></div>
+          <p class="honorar-note">Je nach Umfang und Anzahl der Immobilien. Schriftliche Vereinbarung nach Erstgespräch.</p>
+        </div>
+      </div>
+
+      <div class="leistung-card leistung-card--full fade-in">
+        <p class="leistung-type">Angebot 03</p>
+        <h3 class="leistung-title">Entscheidungsbegleitung bei komplexen Immobilienfragen</h3>
+        <p class="leistung-desc">Für Situationen, in denen mehrere Beteiligte gemeinsam über Immobilien entscheiden müssen – und wirtschaftliche mit persönlichen oder familiären Interessen zusammentreffen.</p>
+        <p class="leistung-target">Typisch: Erbengemeinschaften, familieninterne Übertragungen, langfristige Strategieentscheidungen für Immobilienvermögen mit mehreren Beteiligten.</p>
+        <div class="leistung-list-wrap">
+          <ul class="leistung-list">
+            <li>Strukturierte Analyse der Ausgangssituation</li>
+            <li>Objektive Bewertung der Immobilien</li>
+            <li>Darstellung wirtschaftlicher Optionen und Szenarien</li>
+          </ul>
+          <ul class="leistung-list">
+            <li>Strukturierte Entscheidungsgrundlage für alle Beteiligten</li>
+            <li>Persönliche Beratungsgespräche im Entscheidungsprozess</li>
+            <li>Begleitung auch bei unterschiedlichen Interessen der Beteiligten</li>
+          </ul>
+        </div>
+        <div class="honorar-block">
+          <div class="honorar-row"><span class="honorar-label">Honorar</span><span class="honorar-value">6.000 – 12.000 €</span></div>
+          <p class="honorar-note">Abhängig vom Umfang des Bestands und der Anzahl der Beteiligten. Schriftliche Vereinbarung nach Erstgespräch.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ARBEITSWEISE -->
+<section id="arbeitsweise">
+  <div class="container">
+    <p class="section-eyebrow fade-in">Arbeitsweise</p>
+    <h2 class="section-h2 fade-in">Unabhängig.<br>Ohne Interessenkonflikt.</h2>
+    <p class="section-lead fade-in">Meine Beratung ist ausschließlich auf die Interessen der Eigentümer ausgerichtet. Ich verkaufe keine Immobilien und vermittle keine Finanzierungen.</p>
+    <div class="aw-grid">
+      <div class="aw-item fade-in">
+        <svg class="aw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="color:var(--gold-lt)"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="aw-title">Honorarbasiert</div>
+        <p class="aw-text">Ich werde ausschließlich durch das Honorar meiner Mandanten vergütet. Keine Provision, keine Maklergebühr, keine Empfehlungspauschale. Meine Empfehlung hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
+      </div>
+      <div class="aw-item fade-in">
+        <svg class="aw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="color:var(--gold-lt)"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="aw-title">Fachlich fundiert</div>
+        <p class="aw-text">Bewertungskompetenz, Erfahrung aus der Praxis der Schadensbeurteilung und Kostenkalkulation sowie wirtschaftliche Analyse aus einer Hand. Ich kenne Immobilien nicht nur aus Unterlagen, sondern auch aus der Perspektive von Bausubstanz, Schäden und WEG-Verwaltung.</p>
+      </div>
+      <div class="aw-item fade-in">
+        <svg class="aw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="color:var(--gold-lt)"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <div class="aw-title">Familiensituationen</div>
+        <p class="aw-text">Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen häufig auf unterschiedliche Interessen und Erwartungen. Mein Master in Friedens- und Konfliktforschung hilft mir, solche Situationen strukturiert zu begleiten und Entscheidungsprozesse zu moderieren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section id="ueber-mich">
+  <div class="container">
+    <div class="ueber-grid">
+      <div class="fade-in">
+        <p class="section-eyebrow">Über mich</p>
+        <h2 class="ueber-name">Katrin Workert</h2>
+        <p class="ueber-dia">Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten</p>
+        <p class="ueber-text">Immobilien begleiten mich seit meiner Jugend. Aufgewachsen im Umfeld eines Unternehmens für Gebäudeschadenbeseitigung, kenne ich Gebäude nicht nur aus der Perspektive von Zahlen und Unterlagen – sondern aus der Praxis: Bausubstanz, Feuchteschäden, das Verhalten unterschiedlicher Baustoffe, Kostenkalkulation und die Abwicklung mit Versicherungen.</p>
+        <p class="ueber-text">Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, seit Januar 2020 führe ich es als Geschäftsführerin. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
+        <p class="ueber-text">Mehrere Jahre war ich zunächst Mitarbeiterin, dann Vorsitzende eines Gutachterausschusses für Grundstückswerte. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und Marktdaten gegeben.</p>
+        <p class="ueber-text">Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Den Abschluss als Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden. Ergänzt wird dies durch den Abschluss als Immobilienmaklerin (DIA).</p>
+        <p class="ueber-text">Ich lebe selbst in Südniedersachsen und bin als Immobilieneigentümerin nicht nur Beraterin, sondern kenne die Fragen meiner Mandantinnen und Mandanten auch aus eigener Erfahrung.</p>
+        <p class="ueber-text">Ich berate ausschließlich auf Honorarbasis. Das bedeutet: Meine Empfehlung hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
+        <div class="ueber-quals">
+          <div class="qual-item"><span class="qual-dot"></span><span>Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten — berufsbegleitender Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg &nbsp;<a href="https://www.dia.de/de/657/?credential=0702371f-3c2c-4436-aa83-3ac7802f62c9" target="_blank" rel="noopener" class="qual-link">Diplom ansehen ↗</a></span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>Vorsitzende Gutachterausschuss für Grundstückswerte</span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>Geschäftsführerin, Unternehmen für Gebäudeschadenbeseitigung</span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>B.Sc. Volkswirtschaftslehre</span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>M.A. Friedens- und Konfliktforschung</span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>Immobilienmaklerin (DIA)</span></div>
+          <div class="qual-item"><span class="qual-dot"></span><span>Weiterbildungen Immobilienbewertung (Auswahl): Die neue ImmoWertV 2021 · Verkehrswertermittlung aus steuerlichen Anlässen · Grundstücksbezogene Rechte und Belastungen in der Wertermittlung · Bodenrichtwerte · Bauschäden und Baumängel in der Wertermittlung · Statistische Analysemethoden in der Immobilienbewertung · Hotel- und Gaststättenbewertung · Bewertung von Spezialimmobilien: Logistikimmobilien · Bauplanungsrechtliche Zulässigkeit von Vorhaben · Städtebauliche Umlegung</span></div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="ueber-photo">
+          <div class="photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Foto folgt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="container">
+    <div class="kontakt-grid">
+      <div class="fade-in">
+        <p class="section-eyebrow">Kontakt</p>
+        <h2 class="section-h2">Sprechen Sie<br>mich an.</h2>
+        <p class="kontakt-text">Wenn Sie eine konkrete Immobilienfrage haben oder wissen möchten, ob meine Beratung für Ihre Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich.</p>
+        <p class="kontakt-text">Beratung deutschlandweit.</p>
+        <div class="kontakt-detail">
+          <div class="kd-item">
+            <span class="kd-label">E-Mail</span>
+            <span class="kd-value"><a href="mailto:kontakt@katrin-workert.de">kontakt@katrin-workert.de</a></span>
+          </div>
+          <div class="kd-item">
+            <span class="kd-label">Telefon</span>
+            <span class="kd-value"><a href="tel:+49000000000">+49 [Nummer einfügen]</a></span>
+          </div>
+          <div class="kd-item">
+            <span class="kd-label">Region</span>
+            <span class="kd-value">Südniedersachsen · Deutschlandweit</span>
+          </div>
+        </div>
+        <a href="https://calendly.com/[dein-link]" target="_blank" class="calendly-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Termin online buchen
+        </a>
+      </div>
+      <div class="fade-in">
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-Mail</label>
+            <input class="form-input" type="email" id="email" name="email" required placeholder="ihre@email.de">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="anlass">Anlass</label>
+            <select class="form-select" id="anlass" name="anlass">
+              <option value="">Bitte wählen …</option>
+              <option>Einzelimmobilie prüfen (Kauf / Verkauf / Halten)</option>
+              <option>Bestandsanalyse (mehrere Immobilien)</option>
+              <option>Erbengemeinschaft / gemeinsame Entscheidung</option>
+              <option>Unabhängige Zweitmeinung</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nachricht">Ihre Situation</label>
+            <textarea class="form-textarea" id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihre Situation und Ihre Frage …"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="datenschutz-label">
+              <input type="checkbox" id="datenschutz" required>
+              Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.
+            </label>
+          </div>
+          <button class="form-submit" type="submit">Nachricht senden</button>
+          <div class="form-success" id="formSuccess">Vielen Dank für Ihre Nachricht. Ich melde mich in der Regel innerhalb von 1–2 Werktagen bei Ihnen.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Katrin Workert — Strategische Immobilienberatung</div>
+    <ul class="footer-links">
+      <li><a href="#impressum">Impressum</a></li>
+      <li><a href="#datenschutz">Datenschutz</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Katrin Workert</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 6000);
+  }
+</script>
+</body>
+</html>
