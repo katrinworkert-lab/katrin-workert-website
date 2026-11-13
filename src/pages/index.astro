@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import schreibtisch from '../assets/fotos/schreibtisch.jpg';
-import stehendBaugb from '../assets/fotos/stehend-baugb.jpg';
-import stehendMappe from '../assets/fotos/stehend-mappe.jpg';
-import portraet from '../assets/fotos/portraet.jpg';
+import hocker from '../assets/fotos/hocker.jpg';
+import sessel from '../assets/fotos/sessel.jpg';
+import schreibtischBuch from '../assets/fotos/schreibtisch-buch.jpg';
 import badge from '../assets/dia-badge.png';
 
 const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
@@ -76,33 +75,39 @@ const schema = {
         </div>
       </div>
       <div class="hero-photo">
-        <Image src={schreibtisch} alt="Katrin Workert am Schreibtisch mit Laptop, Flurkarte und Baugesetzbuch" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 55vw" loading="eager" fetchpriority="high" quality={72} />
+        <Image src={hocker} alt="Katrin Workert, sitzend vor hellem Hintergrund" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
       </div>
     </div>
   </section>
 
   <section class="nachweis" aria-label="Qualifikation und Arbeitsgebiet">
     <dl class="wrap nachweis-grid">
-      <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={176} />
+      <a class="nachweis-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener" title="Qualifikation bei der Deutschen Immobilien-Akademie verifizieren">
+        <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={352} />
+      </a>
       <div>
-        <dt>Qualifikation</dt>
-        <dd>{DIA}. <a href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">Nachweis bei der DIA ansehen<span class="sr"> (öffnet in neuem Tab)</span></a></dd>
+        <dt>Qualifikationsnachweis</dt>
+        <dd class="titel">{DIA}</dd>
+        <dd><a class="verify" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">Qualifikation verifizieren<span class="sr"> (öffnet in neuem Tab)</span></a></dd>
       </div>
-      <div>
-        <dt>Arbeitsweise</dt>
-        <dd>Auf Honorarbasis, ohne Provision und ohne Verkaufsinteresse</dd>
-      </div>
-      <div>
-        <dt>Region</dt>
-        <dd>Südniedersachsen und angrenzende Regionen</dd>
+      <div class="nachweis-neben">
+        <div>
+          <dt>Arbeitsweise</dt>
+          <dd>Unabhängig, ohne Verkaufsinteresse, honorarbasiert</dd>
+        </div>
+        <div>
+          <dt>Region</dt>
+          <dd>Südniedersachsen und angrenzende Regionen</dd>
+        </div>
       </div>
     </dl>
   </section>
 
-  <section class="section" id="anlaesse">
+  <section class="section anlaesse" id="anlaesse">
     <div class="wrap">
       <div class="section-head">
-        <h2>Wann eine unabhängige Bewertung gefragt ist</h2>
+        <p class="eyebrow">Typische Anlässe</p>
+        <h2>Wann eine unabhängige Bewertung gefragt ist.</h2>
         <p>Die meisten Bewertungsanlässe entstehen aus konkreten Lebenssituationen – häufig in der Familie. In diesen Situationen unterstütze ich Sie mit einer belastbaren, nachvollziehbaren Wertermittlung.</p>
       </div>
       <ul class="anlaesse-list">
@@ -116,20 +121,21 @@ const schema = {
     </div>
   </section>
 
-  <section class="section leistungen" id="leistungen">
+  <section class="section" id="leistungen">
     <div class="wrap">
       <div class="section-head">
+        <p class="eyebrow">Leistungen</p>
         <h2>Bewertung als Grundlage. Beratung, wo sie gebraucht wird.</h2>
         <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten – und darüber hinaus, wenn ein ganzer Bestand geordnet werden soll.</p>
       </div>
 
+      <div class="leistungen-grid">
       <article class="leistung">
         <div>
           <p class="leistung-rolle">Kernleistung</p>
           <h3>Verkehrswertgutachten</h3>
           <p class="leistung-desc">Für Eigentümer, Familien oder deren Berater, die eine belastbare Wertermittlung nach § 194 BauGB benötigen – methodisch fundiert nach ImmoWertV, mit ausführlichem Ortstermin und vollständiger schriftlicher Dokumentation.</p>
           <p class="leistung-typisch">Typische Anwendungsfälle: familieninterne Vermögensteilung, Pflichtteilsfragen, Zugewinnausgleich, Vorbereitung von Übertragungen und Schenkungen, Verkaufs- oder Halteentscheidung bei größerem Wertvolumen.</p>
-          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong>, je nach Verkehrswert und Komplexität</p>
         </div>
         <ul class="haken">
           <li>Vergleichswert-, Ertragswert- oder Sachwertverfahren nach ImmoWertV – je nach Objekttyp</li>
@@ -139,6 +145,7 @@ const schema = {
           <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
           <li>Abschlussgespräch zur Erläuterung des Ergebnisses</li>
         </ul>
+          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong>, je nach Verkehrswert und Komplexität</p>
       </article>
 
       <article class="leistung">
@@ -147,7 +154,6 @@ const schema = {
           <h3>Kurzbewertung / Marktwertanalyse</h3>
           <p class="leistung-desc">Für Eigentümer, die eine erste unabhängige Werteinschätzung benötigen – als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.</p>
           <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, interne Familienklärung.</p>
-          <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
         </div>
         <div>
           <ul class="haken">
@@ -159,6 +165,7 @@ const schema = {
           </ul>
           <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB und nicht für Gerichtsverfahren oder die Vorlage beim Finanzamt geeignet. Für diese Zwecke berate ich Sie gerne zum passenden Weg.</p>
         </div>
+          <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
       </article>
 
       <article class="leistung">
@@ -167,7 +174,6 @@ const schema = {
           <h3>Strategische Bestandsberatung</h3>
           <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien oder komplexeren Konstellationen – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll.</p>
           <p class="leistung-typisch">Typisch: mehrere Immobilien in Familienhand, Erbfall mit gemischtem Bestand, Übergabe oder Neuordnung, unklare Reihenfolge der nächsten Schritte.</p>
-          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong>, je nach Objektzahl und Komplexität</p>
         </div>
         <ul class="haken">
           <li>Strukturierte Erfassung des Bestands</li>
@@ -176,7 +182,10 @@ const schema = {
           <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, weiter prüfen</li>
           <li>Ausführlicher schriftlicher Bericht und zwei bis drei Beratungsgespräche</li>
         </ul>
+          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong>, je nach Objektzahl und Komplexität</p>
       </article>
+
+      </div>
 
       <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
     </div>
@@ -204,6 +213,7 @@ const schema = {
     </svg>
     <div class="wrap">
       <div class="section-head">
+        <p class="eyebrow">Arbeitsweise</p>
         <h2>Unabhängig. Ohne Verkaufsinteresse.</h2>
         <p>Eine Maklereinschätzung kann sinnvoll sein, wenn ein Verkauf bereits feststeht. Wenn aber noch unklar ist, ob verkauft, gehalten, vermietet oder innerhalb der Familie neu geordnet werden soll, braucht es zuerst eine unabhängige Entscheidungsgrundlage.</p>
       </div>
@@ -228,10 +238,11 @@ const schema = {
   <section class="section" id="ablauf">
     <div class="wrap ablauf-grid">
       <div class="ablauf-photo">
-        <Image src={stehendBaugb} alt="Katrin Workert, stehend, mit dem Baugesetzbuch in der Hand" widths={[480, 720, 960]} sizes="(max-width: 62rem) 26rem, 34vw" quality={72} />
+        <Image src={schreibtischBuch} alt="Katrin Workert am Schreibtisch mit Fachliteratur und einer Flurkarte" widths={[480, 720, 960, 1280]} sizes="(max-width: 62rem) 28rem, 42vw" quality={72} />
       </div>
       <div>
-        <h2>So läuft eine Bewertung ab</h2>
+        <p class="eyebrow">Ablauf</p>
+        <h2>So läuft eine Bewertung ab.</h2>
         <ol class="schritte">
           <li>
             <h3>Erstgespräch</h3>
@@ -256,12 +267,11 @@ const schema = {
 
   <section class="section ueber" id="ueber-mich">
     <div class="wrap ueber-grid">
-      <div class="ueber-photo">
-        <Image src={stehendMappe} alt="Katrin Workert mit einer Aktenmappe im Arm" widths={[480, 720, 960]} sizes="(max-width: 62rem) 26rem, 34vw" quality={72} />
-      </div>
+      
       <div>
-        <h2>Über mich</h2>
-        <p class="ueber-titel">Katrin Workert, {DIA}</p>
+        <p class="eyebrow">Über mich</p>
+        <h2>Katrin Workert</h2>
+        <p class="ueber-titel">{DIA}</p>
         <div class="ueber-text">
           <p>Immobilien begleiten mich seit meiner Jugend. Aufgewachsen im Umfeld eines Unternehmens für Gebäudeschadenbeseitigung, kenne ich Gebäude nicht nur aus der Perspektive von Zahlen und Unterlagen – sondern aus der Praxis: Bausubstanz, Feuchteschäden, das Verhalten unterschiedlicher Baustoffe, Kostenkalkulation und die Abwicklung mit Versicherungen.</p>
           <p>Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, von 2020 bis 2026 habe ich es als Geschäftsführerin geleitet. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
@@ -288,32 +298,94 @@ const schema = {
           </ul>
         </div>
       </div>
+      <div class="ueber-photo">
+        <Image src={sessel} alt="Porträt von Katrin Workert, in einem hellen Sessel sitzend" widths={[480, 720, 960, 1280]} sizes="(max-width: 62rem) 28rem, 42vw" quality={72} />
+      </div>
     </div>
   </section>
 
   <section class="section" id="kontakt">
     <div class="wrap kontakt-grid">
       <div>
-        <h2>Sprechen Sie mich an</h2>
+        <p class="eyebrow">Kontakt</p>
+        <h2>Sprechen Sie mich an.</h2>
         <div class="kontakt-text">
           <p>Wenn Sie eine Bewertungsfrage haben oder unsicher sind, welches Vorgehen zu Ihrer Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
-          <p>Schreiben Sie mir kurz, worum es geht: Anlass, Art der Immobilie und Ort. Ich melde mich in der Regel innerhalb von ein bis zwei Werktagen.</p>
+          <p>Tätig in Südniedersachsen und angrenzenden Regionen.</p>
         </div>
-        <p class="kontakt-mail"><a href={mailto}>{MAIL}</a></p>
         <dl class="kontakt-daten">
+          <div>
+            <dt>E-Mail</dt>
+            <dd><a href={mailto}>{MAIL}</a></dd>
+          </div>
           <div>
             <dt>Region</dt>
             <dd>Südniedersachsen und angrenzende Regionen</dd>
           </div>
         </dl>
+        {/* TODO vor Livegang: Link zur Terminbuchung eintragen */}
+        <a class="btn btn-ghost termin-btn" href="#kontakt" data-platzhalter>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
+          Termin online buchen
+        </a>
       </div>
-      <div class="kontakt-photo">
-        <Image src={portraet} alt="Porträt von Katrin Workert" widths={[480, 720, 960, 1280]} sizes="(max-width: 62rem) 30rem, 38vw" quality={72} />
-      </div>
+
+      {/* TODO vor Livegang: Formular an einen Versanddienst anschließen */}
+      <form class="form" id="kontaktformular" novalidate>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required placeholder="Ihr vollständiger Name" />
+        </div>
+        <div>
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required placeholder="ihre@email.de" />
+        </div>
+        <div>
+          <label for="leistung">Gewünschte Leistung</label>
+          <select id="leistung" name="leistung">
+            <option value="">Bitte wählen …</option>
+            <option>Kurzbewertung / Marktwertanalyse</option>
+            <option>Verkehrswertgutachten</option>
+            <option>Strategische Bestandsberatung</option>
+            <option>Noch unklar – bitte beraten</option>
+          </select>
+        </div>
+        <div>
+          <label for="anlass">Anlass der Bewertung</label>
+          <select id="anlass" name="anlass">
+            <option value="">Bitte wählen …</option>
+            <option>Erbschaft</option>
+            <option>Schenkung / Übertragung</option>
+            <option>Trennung / Scheidung</option>
+            <option>Pflichtteil</option>
+            <option>Kauf- oder Verkaufsüberlegung</option>
+            <option>Zweitmeinung zu vorhandener Einschätzung</option>
+            <option>Mehrere Objekte / Bestandsordnung</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div>
+          <label for="nachricht">Ihre Situation</label>
+          <textarea id="nachricht" name="nachricht" placeholder="Beschreiben Sie kurz die Immobilie und Ihre Frage …"></textarea>
+        </div>
+        <label class="check" for="datenschutz">
+          <input type="checkbox" id="datenschutz" name="datenschutz" required />
+          <span>Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</span>
+        </label>
+        <button class="btn" type="submit">Nachricht senden</button>
+        <p class="form-meldung" id="form-meldung" role="status" hidden>Entwurf: Das Formular ist noch nicht angeschlossen. Es wird noch nichts verschickt.</p>
+      </form>
     </div>
   </section>
-</Base>
 
-<style is:global>
-  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-</style>
+  <script is:inline>
+    (function () {
+      var f = document.getElementById('kontaktformular');
+      if (!f) return;
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        document.getElementById('form-meldung').hidden = false;
+      });
+    })();
+  </script>
+</Base>
