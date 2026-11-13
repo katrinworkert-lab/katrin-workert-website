@@ -1,0 +1,83 @@
+---
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/source-sans-3';
+import '../styles/global.css';
+
+// Bis zum Livegang bleibt die Seite für Suchmaschinen gesperrt.
+const LIVE = false;
+
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const home = Astro.url.pathname === '/' ? '' : '/';
+const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  {(!LIVE || noindex) && <meta name="robots" content="noindex, nofollow">}
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta name="theme-color" content="#1C2B35">
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href={home || '#top'}>Katrin Workert</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptmenue">Menü</button>
+      <nav id="hauptmenue" aria-label="Hauptmenü">
+        <ul>
+          <li><a href={`${home}#anlaesse`}>Anlässe</a></li>
+          <li><a href={`${home}#leistungen`}>Leistungen</a></li>
+          <li><a href={`${home}#arbeitsweise`}>Arbeitsweise</a></li>
+          <li><a href={`${home}#ueber-mich`}>Über mich</a></li>
+          <li><a class="nav-kontakt" href={`${home}#kontakt`}>Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-name">Katrin Workert</p>
+        <p class="footer-title">{DIA}</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:kontakt@katrin-workert.de">kontakt@katrin-workert.de</a></li>
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+      </ul>
+      <p class="footer-copy">© {new Date().getFullYear()} Katrin Workert</p>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      var b = document.querySelector('.nav-toggle');
+      var n = document.getElementById('hauptmenue');
+      if (!b || !n) return;
+      function set(open) {
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+        n.classList.toggle('open', open);
+      }
+      b.addEventListener('click', function () { set(b.getAttribute('aria-expanded') !== 'true'); });
+      n.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    })();
+  </script>
+</body>
+</html>

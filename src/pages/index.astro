@@ -1,0 +1,319 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import schreibtisch from '../assets/fotos/schreibtisch.jpg';
+import stehendBaugb from '../assets/fotos/stehend-baugb.jpg';
+import stehendMappe from '../assets/fotos/stehend-mappe.jpg';
+import portraet from '../assets/fotos/portraet.jpg';
+import badge from '../assets/dia-badge.png';
+
+const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
+const MAIL = 'kontakt@katrin-workert.de';
+const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
+const title = 'Katrin Workert – Unabhängige Immobilienbewertung & Verkehrswertgutachten';
+const description = 'Unabhängige Immobilienbewertung für Erbe, Familie und private Eigentümerentscheidungen. Verkehrswertgutachten, Kurzbewertung und Bestandsberatung – ohne Maklerprovision und ohne Verkaufsinteresse. Südniedersachsen.';
+
+const anlaesse = [
+  ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine unabhängige Wertermittlung schafft die Grundlage.'],
+  ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
+  ['Trennung und Scheidung', 'Beim Zugewinnausgleich braucht es eine methodisch saubere Wertermittlung – oft zu zwei Bewertungsstichtagen. Ich liefere die neutrale Grundlage für eine faire Auseinandersetzung.'],
+  ['Pflichtteilsfragen', 'Für Pflichtteilsansprüche ist der Immobilienwert häufig die zentrale Größe. Eine nachvollziehbare, unabhängige Wertfeststellung hilft allen Beteiligten.'],
+  ['Halten oder verkaufen?', 'Veränderte Lebenssituation, Ruhestand, Sanierungsstau: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung – ohne Verkaufsinteresse.'],
+  ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie ohne eigenes Vermittlungsinteresse.'],
+];
+
+const weiterbildungen = [
+  'Die neue ImmoWertV 2021',
+  'Verkehrswertermittlung aus steuerlichen Anlässen',
+  'Grundstücksbezogene Rechte und Belastungen in der Wertermittlung',
+  'Bodenrichtwerte',
+  'Bauschäden und Baumängel in der Wertermittlung',
+  'Statistische Analysemethoden in der Immobilienbewertung',
+  'Hotel- und Gaststättenbewertung',
+  'Bewertung von Spezialimmobilien: Logistikimmobilien',
+  'Bauplanungsrechtliche Zulässigkeit von Vorhaben',
+  'Städtebauliche Umlegung',
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Katrin Workert – Unabhängige Immobilienbewertung',
+  description,
+  url: Astro.site.href,
+  email: MAIL,
+  areaServed: { '@type': 'AdministrativeArea', name: 'Südniedersachsen und angrenzende Regionen' },
+  founder: {
+    '@type': 'Person',
+    name: 'Katrin Workert',
+    jobTitle: DIA,
+    alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Deutsche Immobilien-Akademie an der Universität Freiburg' }],
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Leistungen',
+    itemListElement: [
+      ['Verkehrswertgutachten', 'Belastbare Wertermittlung nach § 194 BauGB und ImmoWertV für Erbschaft, Schenkung, Pflichtteil, Zugewinnausgleich und Eigentümerentscheidungen.'],
+      ['Kurzbewertung / Marktwertanalyse', 'Erste unabhängige Werteinschätzung als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.'],
+      ['Strategische Bestandsberatung', 'Strukturierte Analyse und Entscheidungsgrundlage für Familien und Eigentümer mit mehreren Immobilien.'],
+    ].map(([name, d]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, description: d } })),
+  },
+  knowsAbout: ['Verkehrswertgutachten', 'Immobilienbewertung', 'Grundstücksbewertung', 'ImmoWertV', 'Immobilie geerbt', 'Erbengemeinschaft', 'Pflichtteil', 'Zugewinnausgleich', 'Marktwertanalyse'],
+};
+---
+<Base title={title} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Unabhängige Immobilien&shy;bewertung für Erbe, Familie und private Eigentümer&shy;entscheidungen.</h1>
+        <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit unabhängiger Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
+        <p class="hero-kern">Ich verkaufe keine Immobilien. Ich schaffe Klarheit über Wert, Optionen und nächste sinnvolle Schritte.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+          <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <Image src={schreibtisch} alt="Katrin Workert am Schreibtisch mit Laptop, Flurkarte und Baugesetzbuch" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 55vw" loading="eager" fetchpriority="high" quality={72} />
+      </div>
+    </div>
+  </section>
+
+  <section class="nachweis" aria-label="Qualifikation und Arbeitsgebiet">
+    <dl class="wrap nachweis-grid">
+      <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={176} />
+      <div>
+        <dt>Qualifikation</dt>
+        <dd>{DIA}. <a href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">Nachweis bei der DIA ansehen<span class="sr"> (öffnet in neuem Tab)</span></a></dd>
+      </div>
+      <div>
+        <dt>Arbeitsweise</dt>
+        <dd>Auf Honorarbasis, ohne Provision und ohne Verkaufsinteresse</dd>
+      </div>
+      <div>
+        <dt>Region</dt>
+        <dd>Südniedersachsen und angrenzende Regionen</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section" id="anlaesse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Wann eine unabhängige Bewertung gefragt ist</h2>
+        <p>Die meisten Bewertungsanlässe entstehen aus konkreten Lebenssituationen – häufig in der Familie. In diesen Situationen unterstütze ich Sie mit einer belastbaren, nachvollziehbaren Wertermittlung.</p>
+      </div>
+      <ul class="anlaesse-list">
+        {anlaesse.map(([t, d]) => (
+          <li>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section leistungen" id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Bewertung als Grundlage. Beratung, wo sie gebraucht wird.</h2>
+        <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten – und darüber hinaus, wenn ein ganzer Bestand geordnet werden soll.</p>
+      </div>
+
+      <article class="leistung">
+        <div>
+          <p class="leistung-rolle">Kernleistung</p>
+          <h3>Verkehrswertgutachten</h3>
+          <p class="leistung-desc">Für Eigentümer, Familien oder deren Berater, die eine belastbare Wertermittlung nach § 194 BauGB benötigen – methodisch fundiert nach ImmoWertV, mit ausführlichem Ortstermin und vollständiger schriftlicher Dokumentation.</p>
+          <p class="leistung-typisch">Typische Anwendungsfälle: familieninterne Vermögensteilung, Pflichtteilsfragen, Zugewinnausgleich, Vorbereitung von Übertragungen und Schenkungen, Verkaufs- oder Halteentscheidung bei größerem Wertvolumen.</p>
+          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong>, je nach Verkehrswert und Komplexität</p>
+        </div>
+        <ul class="haken">
+          <li>Vergleichswert-, Ertragswert- oder Sachwertverfahren nach ImmoWertV – je nach Objekttyp</li>
+          <li>Ausführlicher Ortstermin mit Fotodokumentation</li>
+          <li>Vollständiges schriftliches Gutachten (typisch 30–60 Seiten)</li>
+          <li>Berücksichtigung von Rechten und Belastungen (z. B. Wohnrecht, Erbbaurecht)</li>
+          <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
+          <li>Abschlussgespräch zur Erläuterung des Ergebnisses</li>
+        </ul>
+      </article>
+
+      <article class="leistung">
+        <div>
+          <p class="leistung-rolle">Der Einstieg</p>
+          <h3>Kurzbewertung / Marktwertanalyse</h3>
+          <p class="leistung-desc">Für Eigentümer, die eine erste unabhängige Werteinschätzung benötigen – als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.</p>
+          <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, interne Familienklärung.</p>
+          <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
+        </div>
+        <div>
+          <ul class="haken">
+            <li>Sichtung vorhandener Unterlagen</li>
+            <li>Werteinschätzung nach anerkannten Verfahren</li>
+            <li>Ortstermin (bei Wohnimmobilien in der Regel ja)</li>
+            <li>Kurze schriftliche Zusammenfassung (4–8 Seiten) und Abschlussgespräch</li>
+            <li>Einschätzung, ob ein vollständiges Gutachten sinnvoll ist</li>
+          </ul>
+          <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB und nicht für Gerichtsverfahren oder die Vorlage beim Finanzamt geeignet. Für diese Zwecke berate ich Sie gerne zum passenden Weg.</p>
+        </div>
+      </article>
+
+      <article class="leistung">
+        <div>
+          <p class="leistung-rolle">Für komplexere Konstellationen</p>
+          <h3>Strategische Bestandsberatung</h3>
+          <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien oder komplexeren Konstellationen – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll.</p>
+          <p class="leistung-typisch">Typisch: mehrere Immobilien in Familienhand, Erbfall mit gemischtem Bestand, Übergabe oder Neuordnung, unklare Reihenfolge der nächsten Schritte.</p>
+          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong>, je nach Objektzahl und Komplexität</p>
+        </div>
+        <ul class="haken">
+          <li>Strukturierte Erfassung des Bestands</li>
+          <li>Werteinschätzung oder Bewertung einzelner Objekte</li>
+          <li>Einordnung von Nutzung, Zustand und wirtschaftlicher Relevanz</li>
+          <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, weiter prüfen</li>
+          <li>Ausführlicher schriftlicher Bericht und zwei bis drei Beratungsgespräche</li>
+        </ul>
+      </article>
+
+      <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+    </div>
+  </section>
+
+  <section class="section dark" id="arbeitsweise">
+    <svg class="flurkarte" viewBox="0 0 800 560" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+      <path d="M-20 150 C140 120 260 170 400 150 S660 90 830 130" /><path d="M-20 182 C140 152 260 202 400 182 S660 122 830 162" />
+      <path d="M300 166 C310 280 280 380 300 580" /><path d="M330 168 C340 280 310 380 330 580" />
+      <path d="M330 360 C460 340 600 380 830 350" /><path d="M330 390 C460 370 600 410 830 380" />
+      <path d="M20 145 L30 20 M110 137 L118 10 M200 148 L205 10 M300 158 L300 10 M410 150 L405 10 M520 138 L512 10 M640 112 L628 10 M750 116 L742 10" />
+      <path d="M-20 60 L800 44" />
+      <path d="M40 180 L48 300 L296 290 M120 174 L126 296 M210 186 L214 293" />
+      <path d="M48 300 L52 420 L298 412 M126 296 L132 418 M214 293 L218 415 M52 420 L56 560 M132 418 L140 560 M218 415 L224 560" />
+      <path d="M336 178 L338 352 M440 180 L444 344 M550 168 L556 348 M670 138 L680 362 M338 262 L676 248" />
+      <path d="M400 388 L408 560 M500 384 L510 560 M610 392 L622 560 M720 384 L734 560 M334 470 L830 452" />
+      <g stroke-width="1"><rect x="56" y="200" width="46" height="34" transform="rotate(-3 79 217)" /><rect x="140" y="212" width="52" height="30" transform="rotate(-3 166 227)" /><rect x="228" y="204" width="44" height="40" transform="rotate(-3 250 224)" />
+      <rect x="64" y="322" width="48" height="36" transform="rotate(-3 88 340)" /><rect x="146" y="330" width="40" height="42" transform="rotate(-3 166 351)" /><rect x="232" y="324" width="50" height="32" transform="rotate(-3 257 340)" />
+      <rect x="356" y="196" width="56" height="38" /><rect x="462" y="200" width="60" height="34" /><rect x="574" y="186" width="70" height="40" /><rect x="352" y="282" width="48" height="44" /><rect x="470" y="276" width="54" height="40" /><rect x="586" y="272" width="60" height="46" />
+      <rect x="350" y="404" width="40" height="38" /><rect x="424" y="406" width="58" height="34" /><rect x="528" y="410" width="60" height="36" /><rect x="640" y="404" width="52" height="40" />
+      <rect x="40" y="70" width="50" height="36" transform="rotate(-2 65 88)" /><rect x="132" y="66" width="46" height="40" transform="rotate(-2 155 86)" /><rect x="226" y="72" width="54" height="34" transform="rotate(-2 253 89)" /><rect x="330" y="74" width="50" height="38" /><rect x="434" y="66" width="56" height="40" /><rect x="544" y="56" width="60" height="36" /><rect x="660" y="54" width="54" height="38" /></g>
+      <g fill="currentColor" stroke="none" font-family="Georgia, serif" font-size="13">
+        <text x="68" y="268">112/4</text><text x="150" y="272">113</text><text x="236" y="270">114/2</text><text x="368" y="252">87</text><text x="474" y="254">88/1</text><text x="590" y="244">89</text><text x="76" y="394">121</text><text x="154" y="398">122/3</text><text x="236" y="392">123</text><text x="430" y="500">64/7</text><text x="540" y="504">65</text><text x="650" y="498">66/2</text>
+      </g>
+    </svg>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Unabhängig. Ohne Verkaufsinteresse.</h2>
+        <p>Eine Maklereinschätzung kann sinnvoll sein, wenn ein Verkauf bereits feststeht. Wenn aber noch unklar ist, ob verkauft, gehalten, vermietet oder innerhalb der Familie neu geordnet werden soll, braucht es zuerst eine unabhängige Entscheidungsgrundlage.</p>
+      </div>
+      <ul class="aw-grid">
+        <li>
+          <h3>Unabhängig und honorarbasiert</h3>
+          <p>Ich werde ausschließlich durch das Honorar meiner Auftraggeber vergütet. Keine Provision, keine Vermittlungsinteressen, keine Kooperationen mit Verkaufsinteresse. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
+        </li>
+        <li>
+          <h3>Methodik und Bausubstanz</h3>
+          <p>Bewertung nach ImmoWertV, Kenntnis der amtlichen Bewertungspraxis aus mehrjähriger Tätigkeit im Gutachterausschuss – und Verständnis für Bausubstanz, Feuchteschäden und Sanierungskosten aus der Praxis der Gebäudeschadenbeseitigung.</p>
+        </li>
+        <li>
+          <h3>Sachlich in Familiensituationen</h3>
+          <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und berate auf Basis nachvollziehbarer Fakten, damit alle Beteiligten mit derselben Grundlage arbeiten.</p>
+        </li>
+      </ul>
+      <p class="abgrenzung"><strong>Zur klaren Abgrenzung:</strong> Ich biete keine Maklertätigkeit und keine Verkaufsvermittlung an, keine Finanzierungsvermittlung, keine Steuerberatung und keine Rechtsberatung. Steuerliche und rechtliche Fragen gehören zu Ihrem Steuerberater oder Anwalt – mit beiden arbeite ich auf Wunsch eng zusammen. Meine Rolle: fachliche Einordnung, Werteinschätzung und Entscheidungsgrundlage.</p>
+    </div>
+  </section>
+
+  <section class="section" id="ablauf">
+    <div class="wrap ablauf-grid">
+      <div class="ablauf-photo">
+        <Image src={stehendBaugb} alt="Katrin Workert, stehend, mit dem Baugesetzbuch in der Hand" widths={[480, 720, 960]} sizes="(max-width: 62rem) 26rem, 34vw" quality={72} />
+      </div>
+      <div>
+        <h2>So läuft eine Bewertung ab</h2>
+        <ol class="schritte">
+          <li>
+            <h3>Erstgespräch</h3>
+            <p>Sie schildern mir den Anlass und die Immobilie. Das Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
+          </li>
+          <li>
+            <h3>Angebot</h3>
+            <p>Sie erhalten ein schriftliches Angebot. Das genaue Honorar steht fest, bevor Sie mich beauftragen.</p>
+          </li>
+          <li>
+            <h3>Unterlagen und Ortstermin</h3>
+            <p>Ich sichte die vorhandenen Unterlagen und besichtige die Immobilie.</p>
+          </li>
+          <li>
+            <h3>Ergebnis und Abschlussgespräch</h3>
+            <p>Sie erhalten das Ergebnis schriftlich. Im Abschlussgespräch erläutere ich Ihnen, wie der Wert zustande kommt.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ueber" id="ueber-mich">
+    <div class="wrap ueber-grid">
+      <div class="ueber-photo">
+        <Image src={stehendMappe} alt="Katrin Workert mit einer Aktenmappe im Arm" widths={[480, 720, 960]} sizes="(max-width: 62rem) 26rem, 34vw" quality={72} />
+      </div>
+      <div>
+        <h2>Über mich</h2>
+        <p class="ueber-titel">Katrin Workert, {DIA}</p>
+        <div class="ueber-text">
+          <p>Immobilien begleiten mich seit meiner Jugend. Aufgewachsen im Umfeld eines Unternehmens für Gebäudeschadenbeseitigung, kenne ich Gebäude nicht nur aus der Perspektive von Zahlen und Unterlagen – sondern aus der Praxis: Bausubstanz, Feuchteschäden, das Verhalten unterschiedlicher Baustoffe, Kostenkalkulation und die Abwicklung mit Versicherungen.</p>
+          <p>Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, von 2020 bis 2026 habe ich es als Geschäftsführerin geleitet. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
+          <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und regionale Marktdaten gegeben – die Grundlage jeder belastbaren Wertermittlung.</p>
+          <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
+          <p>Ich lebe selbst in Südniedersachsen und kenne als Immobilieneigentümerin die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
+          <p>Ich arbeite ausschließlich auf Honorarbasis. Das bedeutet: Mein Ergebnis hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
+        </div>
+
+        <div class="quali">
+          <h3>Qualifikationen</h3>
+          <ul>
+            <li>{DIA}, berufsbegleitender Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg. <a href="https://www.dia.de/de/657/?credential=0702371f-3c2c-4436-aa83-3ac7802f62c9" target="_blank" rel="noopener">Diplom ansehen<span class="sr"> (öffnet in neuem Tab)</span></a></li>
+            <li>Mehrjährige hauptberufliche Tätigkeit im Gutachterausschuss für Grundstückswerte, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende</li>
+            <li>Geschäftsführerin eines Unternehmens für Gebäudeschadenbeseitigung, 2020 bis 2026</li>
+            <li>B.Sc. Volkswirtschaftslehre</li>
+            <li>M.A. Friedens- und Konfliktforschung</li>
+          </ul>
+        </div>
+        <div class="quali">
+          <h3>Weiterbildungen in der Immobilienbewertung (Auswahl)</h3>
+          <ul class="weiterbildung">
+            {weiterbildungen.map((w) => <li>{w}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kontakt">
+    <div class="wrap kontakt-grid">
+      <div>
+        <h2>Sprechen Sie mich an</h2>
+        <div class="kontakt-text">
+          <p>Wenn Sie eine Bewertungsfrage haben oder unsicher sind, welches Vorgehen zu Ihrer Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
+          <p>Schreiben Sie mir kurz, worum es geht: Anlass, Art der Immobilie und Ort. Ich melde mich in der Regel innerhalb von ein bis zwei Werktagen.</p>
+        </div>
+        <p class="kontakt-mail"><a href={mailto}>{MAIL}</a></p>
+        <dl class="kontakt-daten">
+          <div>
+            <dt>Region</dt>
+            <dd>Südniedersachsen und angrenzende Regionen</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="kontakt-photo">
+        <Image src={portraet} alt="Porträt von Katrin Workert" widths={[480, 720, 960, 1280]} sizes="(max-width: 62rem) 30rem, 38vw" quality={72} />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
