@@ -76,27 +76,23 @@ const schema = {
       <div class="hero-photo">
         <Image src={schreibtischBuch} alt="Katrin Workert am Schreibtisch mit Fachliteratur und einer Flurkarte" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
       </div>
-      <a class="hero-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">
-        <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={320} loading="eager" />
-        <span>
-          <span class="hero-badge-label">Qualifikationsnachweis</span>
-          <span class="hero-badge-text">Deutsche Immobilien-Akademie an der Universität Freiburg</span>
-          <span class="hero-badge-link">Qualifikation verifizieren<span class="sr"> (öffnet in neuem Tab)</span></span>
-        </span>
-      </a>
     </div>
   </section>
 
   <section class="nachweis" aria-label="Qualifikation und Arbeitsgebiet">
     <dl class="wrap nachweis-grid">
+      <a class="nachweis-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener" title="Qualifikation bei der Deutschen Immobilien-Akademie verifizieren">
+        <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={352} />
+      </a>
       <div>
-        <dt>Qualifikation</dt>
+        <dt>Qualifikationsnachweis</dt>
         <dd class="titel">{DIA}</dd>
+        <dd><a class="verify" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">Qualifikation verifizieren<span class="sr"> (öffnet in neuem Tab)</span></a></dd>
       </div>
       <div class="nachweis-neben">
         <div>
           <dt>Arbeitsweise</dt>
-          <dd>Unabhängig, ohne Verkaufsinteresse, honorarbasiert</dd>
+          <dd>Auf Honorarbasis, ohne Provision und ohne Verkaufsinteresse</dd>
         </div>
         <div>
           <dt>Region</dt>
