@@ -275,6 +275,8 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
   .ueber-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 }
 @media (max-width: 62rem) {
+  .hero-photo { height: clamp(22rem, 100vw, 40rem); }
+  .hero-photo img { object-position: 50% 18%; }
   .hero-badge { order: -1; }
   .nachweis-grid { grid-template-columns: minmax(0, 1fr); }
   .nachweis-neben { border-top-color: var(--line); }

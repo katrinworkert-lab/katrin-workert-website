@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import sessel from '../assets/fotos/sessel.jpg';
+import schreibtischBuch from '../assets/fotos/schreibtisch-buch.jpg';
 import portraet from '../assets/fotos/portraet.jpg';
 import badge from '../assets/dia-badge.png';
 
@@ -74,7 +74,7 @@ const schema = {
         </div>
       </div>
       <div class="hero-photo">
-        <Image src={sessel} alt="Katrin Workert, in einem hellen Sessel sitzend" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
+        <Image src={schreibtischBuch} alt="Katrin Workert am Schreibtisch mit Fachliteratur und einer Flurkarte" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
       </div>
       <a class="hero-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">
         <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={320} loading="eager" />
