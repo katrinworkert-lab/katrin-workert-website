@@ -138,9 +138,9 @@ p { text-wrap: pretty; }
 
 /* Über mich */
 .ueber { background: var(--paper); }
-.ueber-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5.5rem); align-items: start; }
+.ueber-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 6vw, 5.5rem); align-items: start; }
 .ueber-photo { position: sticky; top: 6.5rem; }
-.ueber-photo img { width: 100%; height: auto; }
+.ueber-photo img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 76% 50%; }
 .ueber-titel { margin-top: 0.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 1rem; }
 .ueber-text { margin-top: 1.75rem; display: grid; gap: 1.15rem; color: var(--ink-2); }
 .quali { margin-top: 2.5rem; }
@@ -202,7 +202,7 @@ p { text-wrap: pretty; }
   .aw-grid { grid-template-columns: minmax(0, 1fr); }
   .aw-grid li { padding: 1.75rem 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
   .aw-grid li:last-child { border-bottom: 0; }
-  .ueber-photo { position: static; max-width: 34rem; order: -1; }
+  .ueber-photo { position: static; max-width: 28rem; order: -1; }
   .ablauf-photo { max-width: 28rem; }
   .flurkarte { width: 120%; right: -30%; opacity: 0.1; }
 }
