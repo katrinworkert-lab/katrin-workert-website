@@ -220,3 +220,70 @@ p { text-wrap: pretty; }
   * { transition: none !important; }
 }
 @media print { .site-header, .flurkarte { display: none; } }
+
+/* ============ Variante B: freierer Aufbau, zwei Fotos, Abzeichen im Startbereich ============ */
+h1 { font-size: clamp(2.3rem, 1.4rem + 3.2vw, 3.8rem); }
+h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
+.hero { background: var(--white); }
+.hero-grid { position: relative; }
+.hero-badge { display: flex; align-items: center; gap: 1.1rem; background: var(--ink); color: var(--white); padding: 1.1rem 1.5rem 1.1rem 1.1rem; text-decoration: none; }
+.hero-badge img { width: 6.5rem; height: auto; flex-shrink: 0; filter: drop-shadow(0 3px 14px rgba(0, 0, 0, 0.4)); }
+.hero-badge > span { display: grid; gap: 0.2rem; }
+.hero-badge-label { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-lt); }
+.hero-badge-text { font-family: var(--serif); font-size: 1.25rem; line-height: 1.25; }
+.hero-badge-link { margin-top: 0.3rem; font-size: 0.9375rem; color: var(--gold-lt); text-decoration: underline; text-underline-offset: 0.2em; }
+.hero-badge:hover .hero-badge-link { color: var(--white); }
+
+.nachweis { background: var(--paper); color: var(--ink); border-block: 1px solid var(--line); }
+.nachweis-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+.nachweis dt { color: var(--bronze); }
+.nachweis dd { color: var(--ink-2); }
+.nachweis .titel { color: var(--ink); }
+.nachweis-neben { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+
+.anlaesse { background: var(--white); }
+.anlaesse-list { display: block; background: none; border: 0; border-top: 1px solid var(--ink); }
+.anlaesse-list li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1rem, 4vw, 4rem); align-items: baseline; padding: 1.75rem 0; background: none; border-bottom: 1px solid var(--line); }
+.anlaesse-list h3 { display: block; padding: 0; border: 0; font-weight: 500; font-size: clamp(1.6rem, 1.3rem + 1vw, 2.15rem); }
+.anlaesse-list p { margin: 0; font-size: 1.0625rem; }
+
+#leistungen { background: var(--paper); }
+.leistungen-grid { display: block; border-top: 1px solid var(--ink); }
+.leistung, .leistung:first-child { border: 0; border-bottom: 1px solid var(--line); padding: clamp(2rem, 4vw, 3rem) 0; background: none; }
+.leistung:first-child::before { display: none; }
+.honorar { margin: 0; padding: 0; border: 0; font-size: 0.9375rem; }
+.honorar strong { display: block; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
+.hinweis { background: var(--white); }
+
+.flurkarte { width: min(66rem, 88%); opacity: 0.24; }
+
+.ablauf-grid { display: block; }
+.schritte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.5rem); border-top: 1px solid var(--ink); }
+.schritte li { padding: 1.5rem 0 0; border: 0; }
+.schritte li::before { position: static; display: block; margin-bottom: 0.9rem; font-size: 3rem; }
+
+.ueber-photo { order: -1; }
+.form { background: var(--paper); padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--line); }
+.form-meldung { background: var(--white); }
+
+@media (min-width: 62.01rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); }
+  .hero-photo { min-height: 42rem; }
+  .hero-badge { position: absolute; left: calc(100% * 1.05 / 2 - 2.75rem); bottom: 2.5rem; max-width: 24rem; box-shadow: 0 14px 44px rgba(28, 43, 53, 0.3); }
+  .leistung, .leistung:first-child { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr); gap: clamp(1.5rem, 3vw, 3.5rem); align-items: start; }
+  .leistung:first-child .honorar { grid-column: auto; }
+  .ueber-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+@media (max-width: 62rem) {
+  .hero-badge { order: -1; }
+  .nachweis-grid { grid-template-columns: minmax(0, 1fr); }
+  .nachweis-neben { border-top-color: var(--line); }
+  .leistung, .leistung:first-child { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+  .schritte { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .anlaesse-list li { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .schritte { grid-template-columns: minmax(0, 1fr); }
+  .schritte li { padding-left: 0; }
+  .hero-badge img { width: 5.25rem; }
+}

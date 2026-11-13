@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import sessel from '../assets/fotos/sessel.jpg';
 import portraet from '../assets/fotos/portraet.jpg';
-import schreibtischBuch from '../assets/fotos/schreibtisch-buch.jpg';
 import badge from '../assets/dia-badge.png';
 
 const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
@@ -77,18 +76,22 @@ const schema = {
       <div class="hero-photo">
         <Image src={sessel} alt="Katrin Workert, in einem hellen Sessel sitzend" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
       </div>
+      <a class="hero-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">
+        <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={320} loading="eager" />
+        <span>
+          <span class="hero-badge-label">Qualifikationsnachweis</span>
+          <span class="hero-badge-text">Deutsche Immobilien-Akademie an der Universität Freiburg</span>
+          <span class="hero-badge-link">Qualifikation verifizieren<span class="sr"> (öffnet in neuem Tab)</span></span>
+        </span>
+      </a>
     </div>
   </section>
 
   <section class="nachweis" aria-label="Qualifikation und Arbeitsgebiet">
     <dl class="wrap nachweis-grid">
-      <a class="nachweis-badge" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener" title="Qualifikation bei der Deutschen Immobilien-Akademie verifizieren">
-        <Image src={badge} alt="Abzeichen der Deutschen Immobilien-Akademie an der Universität Freiburg" width={352} />
-      </a>
       <div>
-        <dt>Qualifikationsnachweis</dt>
+        <dt>Qualifikation</dt>
         <dd class="titel">{DIA}</dd>
-        <dd><a class="verify" href="https://www.dia.de/de/657/?credential=9bc7de5b-ac8c-4379-9234-6c0209a08592" target="_blank" rel="noopener">Qualifikation verifizieren<span class="sr"> (öffnet in neuem Tab)</span></a></dd>
       </div>
       <div class="nachweis-neben">
         <div>
@@ -145,7 +148,7 @@ const schema = {
           <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
           <li>Abschlussgespräch zur Erläuterung des Ergebnisses</li>
         </ul>
-          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong>, je nach Verkehrswert und Komplexität</p>
+          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong> je nach Verkehrswert und Komplexität</p>
       </article>
 
       <article class="leistung">
@@ -182,7 +185,7 @@ const schema = {
           <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, weiter prüfen</li>
           <li>Ausführlicher schriftlicher Bericht und zwei bis drei Beratungsgespräche</li>
         </ul>
-          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong>, je nach Objektzahl und Komplexität</p>
+          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong> je nach Objektzahl und Komplexität</p>
       </article>
 
       </div>
@@ -202,6 +205,7 @@ const schema = {
       <path d="M48 300 L52 420 L298 412 M126 296 L132 418 M214 293 L218 415 M52 420 L56 560 M132 418 L140 560 M218 415 L224 560" />
       <path d="M336 178 L338 352 M440 180 L444 344 M550 168 L556 348 M670 138 L680 362 M338 262 L676 248" />
       <path d="M400 388 L408 560 M500 384 L510 560 M610 392 L622 560 M720 384 L734 560 M334 470 L830 452" />
+      <path d="M550 168 L670 138 L675 248 L553 254 Z" fill="currentColor" fill-opacity="0.55" stroke-width="2.5" />
       <g stroke-width="1"><rect x="56" y="200" width="46" height="34" transform="rotate(-3 79 217)" /><rect x="140" y="212" width="52" height="30" transform="rotate(-3 166 227)" /><rect x="228" y="204" width="44" height="40" transform="rotate(-3 250 224)" />
       <rect x="64" y="322" width="48" height="36" transform="rotate(-3 88 340)" /><rect x="146" y="330" width="40" height="42" transform="rotate(-3 166 351)" /><rect x="232" y="324" width="50" height="32" transform="rotate(-3 257 340)" />
       <rect x="356" y="196" width="56" height="38" /><rect x="462" y="200" width="60" height="34" /><rect x="574" y="186" width="70" height="40" /><rect x="352" y="282" width="48" height="44" /><rect x="470" y="276" width="54" height="40" /><rect x="586" y="272" width="60" height="46" />
@@ -237,9 +241,6 @@ const schema = {
 
   <section class="section" id="ablauf">
     <div class="wrap ablauf-grid">
-      <div class="ablauf-photo">
-        <Image src={schreibtischBuch} alt="Katrin Workert am Schreibtisch mit Fachliteratur und einer Flurkarte" widths={[480, 720, 960, 1280]} sizes="(max-width: 62rem) 28rem, 42vw" quality={72} />
-      </div>
       <div>
         <p class="eyebrow">Ablauf</p>
         <h2>So läuft eine Bewertung ab.</h2>
