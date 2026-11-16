@@ -288,3 +288,18 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
   .abgrenzung { border-top: 0; }
   .site-header nav ul { gap: clamp(0.9rem, 1.8vw, 2rem); }
 }
+
+/* Erstgespräch-Hinweise, Formular-Ergänzung, feste Kontaktleiste am Handy */
+.hero-hinweis { margin-top: 1rem; font-size: 0.9375rem; color: var(--ink-2); }
+.stufen-hinweis { margin-top: 1rem; padding: 1rem 1.15rem; background: var(--paper); border-left: 2px solid var(--gold); color: var(--ink); }
+.form input[type="tel"] { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); background: var(--white); border: 1px solid #9AA6AE; border-radius: 2px; padding: 0.85rem 1rem; min-height: 3rem; }
+.form-paar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 1rem; }
+.form .optional { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.kontaktleiste { display: none; }
+@media (max-width: 40rem) {
+  .form-paar { grid-template-columns: minmax(0, 1fr); }
+  .kontaktleiste:not([hidden]) { display: block; position: fixed; inset: auto 0 0 0; z-index: 40; background: var(--white); border-top: 1px solid var(--line); padding: 0.6rem max(1rem, env(safe-area-inset-right, 0px)) calc(0.6rem + env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left, 0px)); box-shadow: 0 -6px 18px rgba(28, 43, 53, 0.08); }
+  .kontaktleiste .btn { display: block; text-align: center; padding-block: 0.85rem; }
+}
+@media print { .kontaktleiste { display: none !important; } }
+@media (max-width: 40rem) { .site-footer { padding-bottom: 6.5rem; } }

@@ -78,6 +78,7 @@ const schema = {
           <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
           <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
         </div>
+        <p class="hero-hinweis">Das Erstgespräch ist kostenlos und unverbindlich.</p>
       </div>
       <div class="hero-photo">
         <Image src={schreibtischBuch} alt="Katrin Workert am Schreibtisch mit Fachliteratur und einer Flurkarte" widths={[640, 960, 1280, 1840]} sizes="(max-width: 62rem) 100vw, 45vw" loading="eager" fetchpriority="high" quality={72} />
@@ -132,6 +133,7 @@ const schema = {
         <p class="eyebrow">Leistungen</p>
         <h2>Bewertung als Grundlage. Beratung dort, wo sie gebraucht wird.</h2>
         <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten – und darüber hinaus, wenn ein ganzer Bestand geordnet werden soll.</p>
+        <p class="stufen-hinweis"><strong>Nicht jede Frage braucht ein Verkehrswertgutachten.</strong> Im kostenlosen Erstgespräch klären wir, welche Leistung für Ihren Anlass ausreicht.</p>
       </div>
 
       <div class="leistungen-grid">
@@ -357,6 +359,23 @@ const schema = {
           <label for="email">E-Mail</label>
           <input type="email" id="email" name="email" autocomplete="email" required placeholder="ihre@email.de" />
         </div>
+        <div class="form-paar">
+          <div>
+            <label for="telefon">Telefon <span class="optional">(freiwillig)</span></label>
+            <input type="tel" id="telefon" name="telefon" autocomplete="tel" inputmode="tel" placeholder="Für einen Rückruf" />
+          </div>
+          <div>
+            <label for="erreichbar">Am besten erreichbar</label>
+            <select id="erreichbar" name="erreichbar">
+              <option value="">Bitte wählen …</option>
+              <option>Vormittags</option>
+              <option>Mittags</option>
+              <option>Nachmittags</option>
+              <option>Abends</option>
+              <option>Lieber per E-Mail</option>
+            </select>
+          </div>
+        </div>
         <div>
           <label for="leistung">Gewünschte Leistung</label>
           <select id="leistung" name="leistung">
@@ -394,6 +413,23 @@ const schema = {
       </form>
     </div>
   </section>
+
+  <div class="kontaktleiste" id="kontaktleiste" hidden>
+    <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var l = document.getElementById('kontaktleiste');
+      var hero = document.querySelector('.hero-actions');
+      var kontakt = document.getElementById('kontakt');
+      if (!l || !hero || !kontakt || !('IntersectionObserver' in window)) return;
+      var sicht = { hero: true, kontakt: false };
+      function set() { l.hidden = sicht.hero || sicht.kontakt; }
+      new IntersectionObserver(function (e) { sicht.hero = e[0].isIntersecting || e[0].boundingClientRect.top > 0; set(); }).observe(hero);
+      new IntersectionObserver(function (e) { sicht.kontakt = e[0].isIntersecting; set(); }).observe(kontakt);
+    })();
+  </script>
 
   <script is:inline>
     (function () {
