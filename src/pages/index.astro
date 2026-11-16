@@ -10,7 +10,7 @@ const MAIL = 'kontakt@katrin-workert.de';
 const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
 // Orte des Arbeitsgebiets. Diese Liste steuert Texte, Seitentitel und Angaben für Suchmaschinen.
 // Reihenfolge: Kerngebiet zuerst. Die ersten drei Orte erscheinen im Seitentitel und in der Abzeichen-Leiste.
-const ORTE = ['Peine', 'Hildesheim', 'Lehrte', 'Salzgitter', 'Wolfenbüttel', 'Gifhorn', 'Celle', 'Wolfsburg', 'Braunschweig', 'Hannover'];
+const ORTE = ['Peine', 'Hildesheim', 'Salzgitter', 'Wolfenbüttel', 'Gifhorn', 'Celle', 'Lehrte', 'Wolfsburg', 'Braunschweig', 'Hannover'];
 const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
 const orteKurz = ORTE.slice(0, 3).join(', ');
 const title = `Immobilienbewertung ${orteKurz} – Katrin Workert`;
