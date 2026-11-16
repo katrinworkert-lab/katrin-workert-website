@@ -9,11 +9,12 @@ const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und u
 const MAIL = 'kontakt@katrin-workert.de';
 const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
 // Orte des Arbeitsgebiets. Diese Liste steuert Texte, Seitentitel und Angaben für Suchmaschinen.
-const ORTE = ['Hannover', 'Braunschweig', 'Hildesheim', 'Wolfsburg', 'Salzgitter', 'Peine', 'Celle', 'Gifhorn', 'Wolfenbüttel', 'Lehrte'];
+// Reihenfolge: Kerngebiet zuerst. Die ersten drei Orte erscheinen im Seitentitel und in der Abzeichen-Leiste.
+const ORTE = ['Peine', 'Hildesheim', 'Lehrte', 'Salzgitter', 'Wolfenbüttel', 'Gifhorn', 'Celle', 'Wolfsburg', 'Braunschweig', 'Hannover'];
 const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
 const orteKurz = ORTE.slice(0, 3).join(', ');
 const title = `Immobilienbewertung ${orteKurz} – Katrin Workert`;
-const description = `Immobilienbewertung für Erbe, Familie und privaten Bestand: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteKurz} und Umgebung. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
+const description = `Immobilienbewertung für Erben, Familien und private Eigentümer: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteKurz} und Umgebung. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
 
 const anlaesse = [
   ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine Wertermittlung ohne Verkaufsinteresse schafft die Grundlage.'],
@@ -70,7 +71,7 @@ const schema = {
   <section class="hero" id="top">
     <div class="hero-grid">
       <div class="hero-text">
-        <h1>Immobilien&shy;bewertung für Erbe, Familie und privaten Bestand.</h1>
+        <h1>Immobilien&shy;bewertung für Erben, Familien und private Eigentümer.</h1>
         <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
         <p class="hero-kern">Ich verkaufe keine Immobilien. Ich schaffe Klarheit über Wert, Optionen und nächste sinnvolle Schritte.</p>
         <div class="hero-actions">
@@ -129,7 +130,7 @@ const schema = {
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Leistungen</p>
-        <h2>Bewertung als Grundlage. Beratung, wo sie gebraucht wird.</h2>
+        <h2>Bewertung als Grundlage. Beratung dort, wo sie gebraucht wird.</h2>
         <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten – und darüber hinaus, wenn ein ganzer Bestand geordnet werden soll.</p>
       </div>
 
