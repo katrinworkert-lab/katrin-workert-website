@@ -239,7 +239,7 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
 .honorar strong { display: block; font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.35rem; }
 .hinweis { background: var(--white); }
 
-.flurkarte { width: min(66rem, 88%); opacity: 0.24; }
+.flurkarte { width: min(66rem, 88%); opacity: 0.18; }
 
 .ablauf-grid { display: block; }
 .schritte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.5rem); border-top: 1px solid var(--ink); }
@@ -276,4 +276,15 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
   .schritte li:last-child { border-bottom: 0; }
   .schritte li::before { grid-row: 1 / span 2; margin: 0; font-size: 2.1rem; line-height: 1.15; }
   .schritte li > * { grid-column: 2; }
+}
+
+/* Arbeitsweise mit sechs Punkten */
+.aw-grid li { border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+@media (min-width: 62.01rem) {
+  .aw-grid li:nth-child(3n) { padding-right: 0; border-right: 0; }
+  .aw-grid li:nth-child(3n + 1) { padding-left: 0; }
+  .aw-grid li:nth-child(n + 4) { border-bottom: 0; }
+  .aw-grid { border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+  .abgrenzung { border-top: 0; }
+  .site-header nav ul { gap: clamp(0.9rem, 1.8vw, 2rem); }
 }

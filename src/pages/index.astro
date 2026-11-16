@@ -8,16 +8,20 @@ import badge from '../assets/dia-badge.png';
 const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
 const MAIL = 'kontakt@katrin-workert.de';
 const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
-const title = 'Katrin Workert – Unabhängige Immobilienbewertung & Verkehrswertgutachten';
-const description = 'Unabhängige Immobilienbewertung für Erbe, Familie und private Eigentümerentscheidungen. Verkehrswertgutachten, Kurzbewertung und Bestandsberatung – ohne Maklerprovision und ohne Verkaufsinteresse. Südniedersachsen.';
+// Orte des Arbeitsgebiets. Diese Liste steuert Texte, Seitentitel und Angaben für Suchmaschinen.
+const ORTE = ['Göttingen', 'Northeim', 'Goslar', 'Duderstadt'];
+const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
+const title = 'Immobilienbewertung & Verkehrswertgutachten in Südniedersachsen – Katrin Workert';
+const description = `Immobilienbewertung für Erbe, Familie und private Eigentümerentscheidungen: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteText}. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
 
 const anlaesse = [
-  ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine unabhängige Wertermittlung schafft die Grundlage.'],
-  ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
-  ['Trennung und Scheidung', 'Beim Zugewinnausgleich braucht es eine methodisch saubere Wertermittlung – oft zu zwei Bewertungsstichtagen. Ich liefere die neutrale Grundlage für eine faire Auseinandersetzung.'],
-  ['Pflichtteilsfragen', 'Für Pflichtteilsansprüche ist der Immobilienwert häufig die zentrale Größe. Eine nachvollziehbare, unabhängige Wertfeststellung hilft allen Beteiligten.'],
-  ['Halten oder verkaufen?', 'Veränderte Lebenssituation, Ruhestand, Sanierungsstau: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung – ohne Verkaufsinteresse.'],
+  ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine Wertermittlung ohne Verkaufsinteresse schafft die Grundlage.'],
+  ['Halten oder verkaufen?', 'Veränderte Lebenssituation, Ruhestand, Sanierungsstau: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung, bevor Sie sich festlegen.'],
   ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie ohne eigenes Vermittlungsinteresse.'],
+  ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
+  ['Mehrere Immobilien in der Familie', 'Mehrere Objekte, unterschiedliche Zustände, unklare Reihenfolge der nächsten Schritte: Ich erfasse den Bestand und ordne Werte und Optionen so, dass die Familie auf einer gemeinsamen Grundlage entscheiden kann.'],
+  ['Trennung und Scheidung', 'Sie möchten sich über den Wert der gemeinsamen Immobilie einigen. Für die einvernehmliche Regelung erstelle ich eine Werteinschätzung oder ein Verkehrswertgutachten, bei Bedarf zu zwei Bewertungsstichtagen.'],
+  ['Pflichtteilsfragen', 'Für Pflichtteilsansprüche ist der Immobilienwert häufig die zentrale Größe. Ein nachvollziehbares Verkehrswertgutachten gibt allen Beteiligten dieselbe Grundlage für die außergerichtliche Klärung.'],
 ];
 
 const weiterbildungen = [
@@ -36,11 +40,11 @@ const weiterbildungen = [
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Katrin Workert – Unabhängige Immobilienbewertung',
+  name: 'Katrin Workert – Immobilienbewertung',
   description,
   url: Astro.site.href,
   email: MAIL,
-  areaServed: { '@type': 'AdministrativeArea', name: 'Südniedersachsen und angrenzende Regionen' },
+  areaServed: [{ '@type': 'AdministrativeArea', name: 'Südniedersachsen' }, ...ORTE.map((name) => ({ '@type': 'City', name }))],
   founder: {
     '@type': 'Person',
     name: 'Katrin Workert',
@@ -51,8 +55,8 @@ const schema = {
     '@type': 'OfferCatalog',
     name: 'Leistungen',
     itemListElement: [
-      ['Verkehrswertgutachten', 'Belastbare Wertermittlung nach § 194 BauGB und ImmoWertV für Erbschaft, Schenkung, Pflichtteil, Zugewinnausgleich und Eigentümerentscheidungen.'],
-      ['Kurzbewertung / Marktwertanalyse', 'Erste unabhängige Werteinschätzung als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.'],
+      ['Verkehrswertgutachten', 'Wertermittlung nach § 194 BauGB und ImmoWertV für Erbschaft, Übertragung in der Familie, einvernehmliche Regelungen bei Trennung, Pflichtteilsfragen und Eigentümerentscheidungen.'],
+      ['Kurzbewertung / Marktwertanalyse', 'Erste Werteinschätzung ohne Verkaufsinteresse als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.'],
       ['Strategische Bestandsberatung', 'Strukturierte Analyse und Entscheidungsgrundlage für Familien und Eigentümer mit mehreren Immobilien.'],
     ].map(([name, d]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, description: d } })),
   },
@@ -65,8 +69,8 @@ const schema = {
   <section class="hero" id="top">
     <div class="hero-grid">
       <div class="hero-text">
-        <h1>Unabhängige Immobilien&shy;bewertung für Erbe, Familie und private Eigentümer&shy;entscheidungen.</h1>
-        <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit unabhängiger Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
+        <h1>Immobilien&shy;bewertung für Erbe, Familie und private Eigentümer&shy;entscheidungen.</h1>
+        <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
         <p class="hero-kern">Ich verkaufe keine Immobilien. Ich schaffe Klarheit über Wert, Optionen und nächste sinnvolle Schritte.</p>
         <div class="hero-actions">
           <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
@@ -96,7 +100,7 @@ const schema = {
         </div>
         <div>
           <dt>Region</dt>
-          <dd>Südniedersachsen und angrenzende Regionen</dd>
+          <dd>{orteText} sowie angrenzende Regionen</dd>
         </div>
       </div>
     </dl>
@@ -106,7 +110,7 @@ const schema = {
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Typische Anlässe</p>
-        <h2>Wann eine unabhängige Bewertung gefragt ist.</h2>
+        <h2>Wann eine Bewertung weiterhilft.</h2>
         <p>Die meisten Bewertungsanlässe entstehen aus konkreten Lebenssituationen – häufig in der Familie. In diesen Situationen unterstütze ich Sie mit einer belastbaren, nachvollziehbaren Wertermittlung.</p>
       </div>
       <ul class="anlaesse-list">
@@ -134,25 +138,28 @@ const schema = {
           <p class="leistung-rolle">Kernleistung</p>
           <h3>Verkehrswertgutachten</h3>
           <p class="leistung-desc">Für Eigentümer, Familien oder deren Berater, die eine belastbare Wertermittlung nach § 194 BauGB benötigen – methodisch fundiert nach ImmoWertV, mit ausführlichem Ortstermin und vollständiger schriftlicher Dokumentation.</p>
-          <p class="leistung-typisch">Typische Anwendungsfälle: familieninterne Vermögensteilung, Pflichtteilsfragen, Zugewinnausgleich, Vorbereitung von Übertragungen und Schenkungen, Verkaufs- oder Halteentscheidung bei größerem Wertvolumen.</p>
+          <p class="leistung-typisch">Typische Anwendungsfälle: Vermögensteilung in der Familie, Vorbereitung von Übertragungen und Schenkungen, Verkaufs- oder Halteentscheidung bei größerem Wertvolumen, einvernehmliche Regelungen bei Trennung und Scheidung, außergerichtliche Klärung von Pflichtteilsfragen.</p>
         </div>
-        <ul class="haken">
-          <li>Vergleichswert-, Ertragswert- oder Sachwertverfahren nach ImmoWertV – je nach Objekttyp</li>
-          <li>Ausführlicher Ortstermin mit Fotodokumentation</li>
-          <li>Vollständiges schriftliches Gutachten (typisch 30–60 Seiten)</li>
-          <li>Berücksichtigung von Rechten und Belastungen (z. B. Wohnrecht, Erbbaurecht)</li>
-          <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
-          <li>Abschlussgespräch zur Erläuterung des Ergebnisses</li>
-        </ul>
-          <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong> je nach Verkehrswert und Komplexität</p>
+        <div>
+          <ul class="haken">
+            <li>Vergleichswert-, Ertragswert- oder Sachwertverfahren nach ImmoWertV – je nach Objekttyp</li>
+            <li>Ausführlicher Ortstermin mit Fotodokumentation</li>
+            <li>Vollständiges schriftliches Gutachten (typisch 30–60 Seiten)</li>
+            <li>Berücksichtigung von Rechten und Belastungen (z. B. Wohnrecht, Erbbaurecht)</li>
+            <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
+            <li>Auf Wunsch erläutere ich Ihnen das Ergebnis am Telefon</li>
+          </ul>
+          <p class="hinweis">Für den Nachweis eines niedrigeren Werts gegenüber dem Finanzamt ist dieses Gutachten nicht vorgesehen. Kommt es zu einem Gerichtsverfahren, beauftragt das Gericht in der Regel selbst ein Gutachten. In beiden Fällen nenne ich Ihnen gern geeignete Kolleginnen und Kollegen.</p>
+        </div>
+        <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong> je nach Verkehrswert und Komplexität</p>
       </article>
 
       <article class="leistung">
         <div>
           <p class="leistung-rolle">Der Einstieg</p>
           <h3>Kurzbewertung / Marktwertanalyse</h3>
-          <p class="leistung-desc">Für Eigentümer, die eine erste unabhängige Werteinschätzung benötigen – als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.</p>
-          <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, interne Familienklärung.</p>
+          <p class="leistung-desc">Für Eigentümer, die eine erste Werteinschätzung benötigen – als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten. Anders als bei einer Maklereinschätzung hängt mein Honorar nicht davon ab, ob verkauft wird.</p>
+          <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, Klärung innerhalb der Familie.</p>
         </div>
         <div>
           <ul class="haken">
@@ -162,16 +169,16 @@ const schema = {
             <li>Kurze schriftliche Zusammenfassung (4–8 Seiten) und Abschlussgespräch</li>
             <li>Einschätzung, ob ein vollständiges Gutachten sinnvoll ist</li>
           </ul>
-          <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB und nicht für Gerichtsverfahren oder die Vorlage beim Finanzamt geeignet. Für diese Zwecke berate ich Sie gerne zum passenden Weg.</p>
+          <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB und nicht für Gerichtsverfahren oder die Vorlage beim Finanzamt geeignet.</p>
         </div>
-          <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
+        <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
       </article>
 
       <article class="leistung">
         <div>
-          <p class="leistung-rolle">Für komplexere Konstellationen</p>
+          <p class="leistung-rolle">Für mehrere Objekte</p>
           <h3>Strategische Bestandsberatung</h3>
-          <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien oder komplexeren Konstellationen – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll.</p>
+          <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll. Ohne Interessenkonflikt: „Halten“ ist bei mir eine ebenso mögliche Empfehlung wie „Verkaufen“.</p>
           <p class="leistung-typisch">Typisch: mehrere Immobilien in Familienhand, Erbfall mit gemischtem Bestand, Übergabe oder Neuordnung, unklare Reihenfolge der nächsten Schritte.</p>
         </div>
         <ul class="haken">
@@ -181,12 +188,38 @@ const schema = {
           <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, weiter prüfen</li>
           <li>Ausführlicher schriftlicher Bericht und zwei bis drei Beratungsgespräche</li>
         </ul>
-          <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong> je nach Objektzahl und Komplexität</p>
+        <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong> je nach Objektzahl und Komplexität</p>
       </article>
-
       </div>
 
       <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+    </div>
+  </section>
+
+  <section class="section" id="ablauf">
+    <div class="wrap ablauf-grid">
+      <div>
+        <p class="eyebrow">Ablauf</p>
+        <h2>So läuft eine Bewertung ab.</h2>
+        <ol class="schritte">
+          <li>
+            <h3>Erstgespräch</h3>
+            <p>Sie schildern mir den Anlass und die Immobilie. Das Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
+          </li>
+          <li>
+            <h3>Angebot</h3>
+            <p>Sie erhalten ein schriftliches Angebot mit Honorar und Liefertermin. Beides steht fest, bevor Sie mich beauftragen.</p>
+          </li>
+          <li>
+            <h3>Unterlagen und Ortstermin</h3>
+            <p>Ich sichte die vorhandenen Unterlagen, hole fehlende Auskünfte ein und besichtige die Immobilie selbst.</p>
+          </li>
+          <li>
+            <h3>Ergebnis</h3>
+            <p>Sie erhalten das Ergebnis schriftlich und nachvollziehbar hergeleitet. Offene Fragen dazu klären wir im Gespräch.</p>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -214,51 +247,36 @@ const schema = {
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Arbeitsweise</p>
-        <h2>Unabhängig. Ohne Verkaufsinteresse.</h2>
-        <p>Eine Maklereinschätzung kann sinnvoll sein, wenn ein Verkauf bereits feststeht. Wenn aber noch unklar ist, ob verkauft, gehalten, vermietet oder innerhalb der Familie neu geordnet werden soll, braucht es zuerst eine unabhängige Entscheidungsgrundlage.</p>
+        <h2>Ohne Interessenkonflikt.</h2>
+        <p>Eine Maklereinschätzung kann sinnvoll sein, wenn ein Verkauf bereits feststeht. Wenn aber noch unklar ist, ob verkauft, gehalten, vermietet, verpachtet oder innerhalb der Familie neu geordnet werden soll, braucht es zuerst eine Entscheidungsgrundlage ohne Verkaufsinteresse.</p>
       </div>
       <ul class="aw-grid">
         <li>
-          <h3>Unabhängig und honorarbasiert</h3>
-          <p>Ich werde ausschließlich durch das Honorar meiner Auftraggeber vergütet. Keine Provision, keine Vermittlungsinteressen, keine Kooperationen mit Verkaufsinteresse. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
+          <h3>Kein Verkaufsgeschäft</h3>
+          <p>Ich vermittle keine Immobilien und erhalte keine Provision. Vergütet werde ich ausschließlich durch das Honorar meiner Auftraggeber. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
         </li>
         <li>
-          <h3>Methodik und Bausubstanz</h3>
-          <p>Bewertung nach ImmoWertV, Kenntnis der amtlichen Bewertungspraxis aus mehrjähriger Tätigkeit im Gutachterausschuss – und Verständnis für Bausubstanz, Feuchteschäden und Sanierungskosten aus der Praxis der Gebäudeschadenbeseitigung.</p>
+          <h3>Praxis aus dem Gutachterausschuss</h3>
+          <p>Mehrere Jahre habe ich hauptberuflich im Gutachterausschuss für Grundstückswerte gearbeitet, zuletzt als Vorsitzende. Die amtliche Bewertungspraxis und regionale Marktdaten kenne ich aus eigener Arbeit.</p>
+        </li>
+        <li>
+          <h3>Blick für die Bausubstanz</h3>
+          <p>Aus sechs Jahren Geschäftsführung in der Gebäudeschadenbeseitigung kenne ich Bausubstanz, Feuchteschäden, Baustoffverhalten und Kostenkalkulation aus der Praxis – nicht nur aus Unterlagen.</p>
+        </li>
+        <li>
+          <h3>Honorar steht vorher fest</h3>
+          <p>Die Honorarspannen stehen offen auf dieser Seite. Das genaue Honorar vereinbaren wir schriftlich, bevor Sie mich beauftragen. Das erste Gespräch ist kostenlos.</p>
         </li>
         <li>
           <h3>Sachlich in Familiensituationen</h3>
-          <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und berate auf Basis nachvollziehbarer Fakten, damit alle Beteiligten mit derselben Grundlage arbeiten.</p>
+          <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und arbeite auf Basis nachvollziehbarer Fakten, damit alle Beteiligten dieselbe Grundlage haben.</p>
+        </li>
+        <li>
+          <h3>Persönlich</h3>
+          <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Jede Immobilie besichtige ich selbst.</p>
         </li>
       </ul>
-      <p class="abgrenzung"><strong>Zur klaren Abgrenzung:</strong> Ich biete keine Maklertätigkeit und keine Verkaufsvermittlung an, keine Finanzierungsvermittlung, keine Steuerberatung und keine Rechtsberatung. Steuerliche und rechtliche Fragen gehören zu Ihrem Steuerberater oder Anwalt – mit beiden arbeite ich auf Wunsch eng zusammen. Meine Rolle: fachliche Einordnung, Werteinschätzung und Entscheidungsgrundlage.</p>
-    </div>
-  </section>
-
-  <section class="section" id="ablauf">
-    <div class="wrap ablauf-grid">
-      <div>
-        <p class="eyebrow">Ablauf</p>
-        <h2>So läuft eine Bewertung ab.</h2>
-        <ol class="schritte">
-          <li>
-            <h3>Erstgespräch</h3>
-            <p>Sie schildern mir den Anlass und die Immobilie. Das Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
-          </li>
-          <li>
-            <h3>Angebot</h3>
-            <p>Sie erhalten ein schriftliches Angebot. Das genaue Honorar steht fest, bevor Sie mich beauftragen.</p>
-          </li>
-          <li>
-            <h3>Unterlagen und Ortstermin</h3>
-            <p>Ich sichte die vorhandenen Unterlagen und besichtige die Immobilie.</p>
-          </li>
-          <li>
-            <h3>Ergebnis und Abschlussgespräch</h3>
-            <p>Sie erhalten das Ergebnis schriftlich. Im Abschlussgespräch erläutere ich Ihnen, wie der Wert zustande kommt.</p>
-          </li>
-        </ol>
-      </div>
+      <p class="abgrenzung"><strong>Was ich nicht anbiete:</strong> Maklertätigkeit, Verkaufsvermittlung und Finanzierungsvermittlung. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
     </div>
   </section>
 
@@ -274,7 +292,7 @@ const schema = {
           <p>Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, von 2020 bis 2026 habe ich es als Geschäftsführerin geleitet. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
           <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und regionale Marktdaten gegeben – die Grundlage jeder belastbaren Wertermittlung.</p>
           <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
-          <p>Ich lebe selbst in Südniedersachsen und kenne als Immobilieneigentümerin die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
+          <p>Ich lebe selbst in Südniedersachsen, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
           <p>Ich arbeite ausschließlich auf Honorarbasis. Das bedeutet: Mein Ergebnis hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
         </div>
 
@@ -308,7 +326,7 @@ const schema = {
         <h2>Sprechen Sie mich an.</h2>
         <div class="kontakt-text">
           <p>Wenn Sie eine Bewertungsfrage haben oder unsicher sind, welches Vorgehen zu Ihrer Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
-          <p>Tätig in Südniedersachsen und angrenzenden Regionen.</p>
+          <p>Tätig in {orteText} sowie in angrenzenden Regionen Südniedersachsens.</p>
         </div>
         <dl class="kontakt-daten">
           <div>
@@ -317,7 +335,7 @@ const schema = {
           </div>
           <div>
             <dt>Region</dt>
-            <dd>Südniedersachsen und angrenzende Regionen</dd>
+            <dd>{ORTE.join(', ')} und Umgebung</dd>
           </div>
         </dl>
         {/* TODO vor Livegang: Link zur Terminbuchung eintragen */}
