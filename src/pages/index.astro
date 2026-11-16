@@ -9,10 +9,11 @@ const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und u
 const MAIL = 'kontakt@katrin-workert.de';
 const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
 // Orte des Arbeitsgebiets. Diese Liste steuert Texte, Seitentitel und Angaben für Suchmaschinen.
-const ORTE = ['Göttingen', 'Northeim', 'Goslar', 'Duderstadt'];
+const ORTE = ['Hannover', 'Braunschweig', 'Hildesheim', 'Wolfsburg', 'Salzgitter', 'Peine', 'Celle', 'Gifhorn', 'Wolfenbüttel', 'Lehrte'];
 const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
-const title = 'Immobilienbewertung & Verkehrswertgutachten in Südniedersachsen – Katrin Workert';
-const description = `Immobilienbewertung für Erbe, Familie und private Eigentümerentscheidungen: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteText}. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
+const orteKurz = ORTE.slice(0, 3).join(', ');
+const title = `Immobilienbewertung ${orteKurz} – Katrin Workert`;
+const description = `Immobilienbewertung für Erbe, Familie und privaten Bestand: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteKurz} und Umgebung. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
 
 const anlaesse = [
   ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine Wertermittlung ohne Verkaufsinteresse schafft die Grundlage.'],
@@ -44,7 +45,7 @@ const schema = {
   description,
   url: Astro.site.href,
   email: MAIL,
-  areaServed: [{ '@type': 'AdministrativeArea', name: 'Südniedersachsen' }, ...ORTE.map((name) => ({ '@type': 'City', name }))],
+  areaServed: ORTE.map((name) => ({ '@type': 'City', name })),
   founder: {
     '@type': 'Person',
     name: 'Katrin Workert',
@@ -69,7 +70,7 @@ const schema = {
   <section class="hero" id="top">
     <div class="hero-grid">
       <div class="hero-text">
-        <h1>Immobilien&shy;bewertung für Erbe, Familie und private Eigentümer&shy;entscheidungen.</h1>
+        <h1>Immobilien&shy;bewertung für Erbe, Familie und privaten Bestand.</h1>
         <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
         <p class="hero-kern">Ich verkaufe keine Immobilien. Ich schaffe Klarheit über Wert, Optionen und nächste sinnvolle Schritte.</p>
         <div class="hero-actions">
@@ -100,7 +101,7 @@ const schema = {
         </div>
         <div>
           <dt>Region</dt>
-          <dd>{orteText} sowie angrenzende Regionen</dd>
+          <dd>{orteKurz} und Umgebung. Weitere Orte auf Anfrage.</dd>
         </div>
       </div>
     </dl>
@@ -212,7 +213,7 @@ const schema = {
           </li>
           <li>
             <h3>Unterlagen und Ortstermin</h3>
-            <p>Ich sichte die vorhandenen Unterlagen, hole fehlende Auskünfte ein und besichtige die Immobilie selbst.</p>
+            <p>Ich sichte die vorhandenen Unterlagen, hole fehlende Auskünfte ein und besichtige die Immobilie. Beim Verkehrswertgutachten gehört der Ortstermin immer dazu.</p>
           </li>
           <li>
             <h3>Ergebnis</h3>
@@ -273,7 +274,7 @@ const schema = {
         </li>
         <li>
           <h3>Persönlich</h3>
-          <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Jede Immobilie besichtige ich selbst.</p>
+          <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Für jedes Verkehrswertgutachten besichtige ich die Immobilie selbst.</p>
         </li>
       </ul>
       <p class="abgrenzung"><strong>Was ich nicht anbiete:</strong> Maklertätigkeit, Verkaufsvermittlung und Finanzierungsvermittlung. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
@@ -292,7 +293,7 @@ const schema = {
           <p>Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, von 2020 bis 2026 habe ich es als Geschäftsführerin geleitet. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
           <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und regionale Marktdaten gegeben – die Grundlage jeder belastbaren Wertermittlung.</p>
           <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
-          <p>Ich lebe selbst in Südniedersachsen, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
+          <p>Ich lebe selbst in der Region, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
           <p>Ich arbeite ausschließlich auf Honorarbasis. Das bedeutet: Mein Ergebnis hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
         </div>
 
@@ -326,7 +327,7 @@ const schema = {
         <h2>Sprechen Sie mich an.</h2>
         <div class="kontakt-text">
           <p>Wenn Sie eine Bewertungsfrage haben oder unsicher sind, welches Vorgehen zu Ihrer Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
-          <p>Tätig in {orteText} sowie in angrenzenden Regionen Südniedersachsens.</p>
+          <p>Tätig in {orteText}. Alle weiteren Orte auf Anfrage.</p>
         </div>
         <dl class="kontakt-daten">
           <div>
@@ -335,7 +336,7 @@ const schema = {
           </div>
           <div>
             <dt>Region</dt>
-            <dd>{ORTE.join(', ')} und Umgebung</dd>
+            <dd>{orteKurz} und Umgebung</dd>
           </div>
         </dl>
         {/* TODO vor Livegang: Link zur Terminbuchung eintragen */}
