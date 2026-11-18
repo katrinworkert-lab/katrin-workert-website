@@ -303,3 +303,8 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
 }
 @media print { .kontaktleiste { display: none !important; } }
 @media (max-width: 40rem) { .site-footer { padding-bottom: 6.5rem; } }
+/* Einordnung zum Verkehrswertgutachten */
+.einordnung { margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.einordnung h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; line-height: 1.25; }
+.einordnung p { margin-top: 0.5rem; color: var(--ink-2); font-size: 0.9375rem; }
+.honorar-zusatz { display: block; margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }

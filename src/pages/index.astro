@@ -18,7 +18,8 @@ const description = `Immobilienbewertung für Erben, Familien und private Eigent
 
 const anlaesse = [
   ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine Wertermittlung ohne Verkaufsinteresse schafft die Grundlage.'],
-  ['Halten oder verkaufen?', 'Veränderte Lebenssituation, Ruhestand, Sanierungsstau: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung, bevor Sie sich festlegen.'],
+  ['Halten oder verkaufen?', 'Veränderte Lebenssituation oder Ruhestand: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung, bevor Sie sich festlegen.'],
+  ['Schäden oder Sanierungsstau', 'Feuchtigkeit, Bauschäden oder lange aufgeschobene Instandhaltung: Bevor Sie über Sanierung, Verkauf oder Vermietung entscheiden, ordne ich den baulichen Zustand und den absehbaren Aufwand gemeinsam mit dem Wert ein.'],
   ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie ohne eigenes Vermittlungsinteresse.'],
   ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
   ['Mehrere Immobilien in der Familie', 'Mehrere Objekte, unterschiedliche Zustände, unklare Reihenfolge der nächsten Schritte: Ich erfasse den Bestand und ordne Werte und Optionen so, dass die Familie auf einer gemeinsamen Grundlage entscheiden kann.'],
@@ -58,11 +59,11 @@ const schema = {
     name: 'Leistungen',
     itemListElement: [
       ['Verkehrswertgutachten', 'Wertermittlung nach § 194 BauGB und ImmoWertV für Erbschaft, Übertragung in der Familie, einvernehmliche Regelungen bei Trennung, Pflichtteilsfragen und Eigentümerentscheidungen.'],
-      ['Kurzbewertung / Marktwertanalyse', 'Erste Werteinschätzung ohne Verkaufsinteresse als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.'],
+      ['Kurzbewertung / Marktwertanalyse', 'Werteinschätzung mit Blick auf den baulichen Zustand als Entscheidungsgrundlage, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.'],
       ['Strategische Bestandsberatung', 'Strukturierte Analyse und Entscheidungsgrundlage für Familien und Eigentümer mit mehreren Immobilien.'],
     ].map(([name, d]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, description: d } })),
   },
-  knowsAbout: ['Verkehrswertgutachten', 'Immobilienbewertung', 'Grundstücksbewertung', 'ImmoWertV', 'Immobilie geerbt', 'Erbengemeinschaft', 'Pflichtteil', 'Zugewinnausgleich', 'Marktwertanalyse'],
+  knowsAbout: ['Verkehrswertgutachten', 'Immobilienbewertung', 'Grundstücksbewertung', 'ImmoWertV', 'Immobilie geerbt', 'Erbengemeinschaft', 'Pflichtteil', 'Zugewinnausgleich', 'Marktwertanalyse', 'Bauschäden', 'Sanierungsstau'],
 };
 ---
 <Base title={title} description={description}>
@@ -132,7 +133,7 @@ const schema = {
       <div class="section-head">
         <p class="eyebrow">Leistungen</p>
         <h2>Bewertung als Grundlage. Beratung dort, wo sie gebraucht wird.</h2>
-        <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten – und darüber hinaus, wenn ein ganzer Bestand geordnet werden soll.</p>
+        <p>Von der ersten Werteinschätzung bis zum vollständigen Verkehrswertgutachten. Neben dem Wert erfahren Sie auf Wunsch, was der bauliche Zustand und die wirtschaftlichen Optionen für Ihre Entscheidung bedeuten.</p>
         <p class="stufen-hinweis"><strong>Nicht jede Frage braucht ein Verkehrswertgutachten.</strong> Im kostenlosen Erstgespräch klären wir, welche Leistung für Ihren Anlass ausreicht.</p>
       </div>
 
@@ -154,26 +155,31 @@ const schema = {
             <li>Auf Wunsch erläutere ich Ihnen das Ergebnis am Telefon</li>
           </ul>
           <p class="hinweis">Für den Nachweis eines niedrigeren Werts gegenüber dem Finanzamt ist dieses Gutachten nicht vorgesehen. Kommt es zu einem Gerichtsverfahren, beauftragt das Gericht in der Regel selbst ein Gutachten. In beiden Fällen nenne ich Ihnen gern geeignete Kolleginnen und Kollegen.</p>
+          <div class="einordnung">
+            <h4>Auf Wunsch: Einordnung des Ergebnisses</h4>
+            <p>Bei Erbschaft, Familienfragen, Schäden oder der Frage „halten oder verkaufen“ ergänze ich das Gutachten auf Wunsch um eine Einordnung: was der bauliche Zustand bedeutet, welche Kosten sich abzeichnen und welche wirtschaftlichen Optionen Sie haben. Sie erhalten sie als kurze schriftliche Zusammenfassung oder im Gespräch, getrennt vom Gutachten. So bleibt das Gutachten für alle Beteiligten dieselbe Grundlage.</p>
+          </div>
         </div>
-        <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong> je nach Verkehrswert und Komplexität</p>
+        <p class="honorar"><strong>Honorar: 2.300 bis 5.500 €</strong> je nach Verkehrswert und Komplexität<span class="honorar-zusatz">Einordnung auf Wunsch: 150 € je Stunde, in der Regel zwei bis vier Stunden</span></p>
       </article>
 
       <article class="leistung">
         <div>
           <p class="leistung-rolle">Der Einstieg</p>
           <h3>Kurzbewertung / Marktwertanalyse</h3>
-          <p class="leistung-desc">Für Eigentümer, die eine erste Werteinschätzung benötigen – als Orientierung, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten. Anders als bei einer Maklereinschätzung hängt mein Honorar nicht davon ab, ob verkauft wird.</p>
-          <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, Klärung innerhalb der Familie.</p>
+          <p class="leistung-desc">Für Eigentümer und Familien vor einer Entscheidung: eine fundierte Werteinschätzung mit Blick auf den baulichen Zustand – als Entscheidungsgrundlage, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten. Anders als bei einer Maklereinschätzung hängt mein Honorar nicht davon ab, ob verkauft wird.</p>
+          <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, Klärung innerhalb der Familie, Immobilie mit Schäden oder Sanierungsstau.</p>
         </div>
         <div>
           <ul class="haken">
             <li>Sichtung vorhandener Unterlagen</li>
             <li>Werteinschätzung nach anerkannten Verfahren</li>
-            <li>Ortstermin (bei Wohnimmobilien in der Regel ja)</li>
-            <li>Kurze schriftliche Zusammenfassung (4–8 Seiten) und Abschlussgespräch</li>
-            <li>Einschätzung, ob ein vollständiges Gutachten sinnvoll ist</li>
+            <li>Einschätzung des baulichen Zustands und des absehbaren Instandhaltungsbedarfs</li>
+            <li>Ortstermin in der Regel ja, weil sich der bauliche Zustand nur vor Ort beurteilen lässt</li>
+            <li>Übersicht der Optionen mit Empfehlung zum nächsten Schritt, auch dazu, ob ein vollständiges Gutachten nötig ist</li>
+            <li>Kurze schriftliche Zusammenfassung (4–8 Seiten), auf Wunsch erläutere ich Ihnen das Ergebnis am Telefon</li>
           </ul>
-          <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB und nicht für Gerichtsverfahren oder die Vorlage beim Finanzamt geeignet.</p>
+          <p class="hinweis">Die Kurzbewertung ist kein Verkehrswertgutachten nach § 194 BauGB. Für Gerichtsverfahren, die Vorlage beim Finanzamt und die Kreditsicherung ist sie nicht geeignet.</p>
         </div>
         <p class="honorar"><strong>Honorar: 800 bis 1.700 €</strong> als Pauschale, je nach Aufwand</p>
       </article>
@@ -189,14 +195,15 @@ const schema = {
           <li>Strukturierte Erfassung des Bestands</li>
           <li>Werteinschätzung oder Bewertung einzelner Objekte</li>
           <li>Einordnung von Nutzung, Zustand und wirtschaftlicher Relevanz</li>
-          <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, weiter prüfen</li>
+          <li>Ortstermine bei allen relevanten Objekten</li>
+          <li>Übersicht über Optionen je Objekt: halten, verkaufen, vermieten, verpachten, zunächst sichern oder weiter prüfen</li>
           <li>Ausführlicher schriftlicher Bericht und zwei bis drei Beratungsgespräche</li>
         </ul>
         <p class="honorar"><strong>Honorar: 5.000 bis 10.000 €</strong> je nach Objektzahl und Komplexität</p>
       </article>
       </div>
 
-      <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+      <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Fahrtkosten im Umkreis von 60 Kilometern sind im Honorar enthalten. Darüber hinaus berechne ich 0,70 € je Kilometer. Behördliche Auskünfte wie Grundbuchauszug oder Flurkarte reiche ich ohne Aufschlag weiter.</p>
     </div>
   </section>
 
@@ -256,31 +263,31 @@ const schema = {
       </div>
       <ul class="aw-grid">
         <li>
-          <h3>Kein Verkaufsgeschäft</h3>
-          <p>Ich vermittle keine Immobilien und erhalte keine Provision. Vergütet werde ich ausschließlich durch das Honorar meiner Auftraggeber. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
-        </li>
-        <li>
           <h3>Praxis aus dem Gutachterausschuss</h3>
           <p>Mehrere Jahre habe ich hauptberuflich im Gutachterausschuss für Grundstückswerte gearbeitet, zuletzt als Vorsitzende. Die amtliche Bewertungspraxis und regionale Marktdaten kenne ich aus eigener Arbeit.</p>
         </li>
         <li>
           <h3>Blick für die Bausubstanz</h3>
-          <p>Aus sechs Jahren Geschäftsführung in der Gebäudeschadenbeseitigung kenne ich Bausubstanz, Feuchteschäden, Baustoffverhalten und Kostenkalkulation aus der Praxis – nicht nur aus Unterlagen.</p>
-        </li>
-        <li>
-          <h3>Honorar steht vorher fest</h3>
-          <p>Die Honorarspannen stehen offen auf dieser Seite. Das genaue Honorar vereinbaren wir schriftlich, bevor Sie mich beauftragen. Das erste Gespräch ist kostenlos.</p>
+          <p>Aus sechs Jahren Geschäftsführung in der Gebäudeschadenbeseitigung kenne ich Bausubstanz, Feuchteschäden, Baustoffverhalten und Kostenkalkulation aus der Praxis – nicht nur aus Unterlagen. Deshalb kann ich einschätzen, was ein Schaden für den Wert und für Ihre Entscheidung bedeutet.</p>
         </li>
         <li>
           <h3>Sachlich in Familiensituationen</h3>
           <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und arbeite auf Basis nachvollziehbarer Fakten, damit alle Beteiligten dieselbe Grundlage haben.</p>
         </li>
         <li>
+          <h3>Kein Verkaufsgeschäft</h3>
+          <p>Ich vermittle keine Immobilien und erhalte keine Provision. Vergütet werde ich ausschließlich durch das Honorar meiner Auftraggeber. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
+        </li>
+        <li>
+          <h3>Honorar steht vorher fest</h3>
+          <p>Die Honorarspannen stehen offen auf dieser Seite. Das genaue Honorar vereinbaren wir schriftlich, bevor Sie mich beauftragen. Das erste Gespräch ist kostenlos.</p>
+        </li>
+        <li>
           <h3>Persönlich</h3>
           <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Für jedes Verkehrswertgutachten besichtige ich die Immobilie selbst.</p>
         </li>
       </ul>
-      <p class="abgrenzung"><strong>Was ich nicht anbiete:</strong> Maklertätigkeit, Verkaufsvermittlung und Finanzierungsvermittlung. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
+      <p class="abgrenzung"><strong>Was ich nicht anbiete:</strong> Maklertätigkeit, Verkaufsvermittlung, Finanzierungsvermittlung und Bewertungen für die Kreditvergabe. Diese beauftragt die Bank selbst. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
     </div>
   </section>
 
@@ -295,7 +302,7 @@ const schema = {
           <p>Immobilien begleiten mich seit meiner Jugend. Aufgewachsen im Umfeld eines Unternehmens für Gebäudeschadenbeseitigung, kenne ich Gebäude nicht nur aus der Perspektive von Zahlen und Unterlagen – sondern aus der Praxis: Bausubstanz, Feuchteschäden, das Verhalten unterschiedlicher Baustoffe, Kostenkalkulation und die Abwicklung mit Versicherungen.</p>
           <p>Von 2012 bis 2016 war ich Vollzeit in diesem Unternehmen tätig, von 2020 bis 2026 habe ich es als Geschäftsführerin geleitet. Diese Erfahrung umfasst unter anderem WEG-Verwaltung, Schadensbeurteilung und die Zusammenarbeit mit Gebäude-, Hausrat- und Haftpflichtversicherungen – Kenntnisse, die in der Immobilienbewertung unmittelbar relevant sind.</p>
           <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und regionale Marktdaten gegeben – die Grundlage jeder belastbaren Wertermittlung.</p>
-          <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
+          <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Die Volkswirtschaftslehre schärft den Blick für wirtschaftliche Optionen, die Konfliktforschung den sachlichen Umgang mit unterschiedlichen Interessen. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
           <p>Ich lebe selbst in der Region, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
           <p>Ich arbeite ausschließlich auf Honorarbasis. Das bedeutet: Mein Ergebnis hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
         </div>
@@ -395,6 +402,7 @@ const schema = {
             <option>Trennung / Scheidung</option>
             <option>Pflichtteil</option>
             <option>Kauf- oder Verkaufsüberlegung</option>
+            <option>Schäden / Sanierungsstau</option>
             <option>Zweitmeinung zu vorhandener Einschätzung</option>
             <option>Mehrere Objekte / Bestandsordnung</option>
             <option>Sonstiges</option>
