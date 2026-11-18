@@ -311,3 +311,5 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
 .honorar-zusatz { display: block; margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--line); }
 .leiste-kurz { display: none; }
 @media (max-width: 23rem) { .leiste-lang { display: none; } .leiste-kurz { display: inline; } }
+/* Kernsatz der Bestandsberatung */
+.leistung-kern { margin-top: 1rem; font-family: var(--serif); font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.45rem); font-weight: 500; line-height: 1.3; color: var(--ink); text-wrap: balance; }

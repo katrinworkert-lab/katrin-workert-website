@@ -16,13 +16,13 @@ const ORTE = ['Peine', 'Hildesheim', 'Salzgitter', 'Wolfenbüttel', 'Gifhorn', '
 const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
 const orteKurz = ORTE.slice(0, 3).join(', ');
 const title = `Immobilienbewertung ${orteKurz} – Katrin Workert`;
-const description = `Immobilienbewertung für Erben, Familien und private Eigentümer: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteKurz} und Umgebung. Ohne Maklerprovision und ohne Verkaufsinteresse.`;
+const description = `Immobilienbewertung für Erben, Familien und private Eigentümer: Verkehrswertgutachten, Kurzbewertung und Bestandsberatung in ${orteKurz} und Umgebung, auf Wunsch mit Einordnung des Ergebnisses für Ihre Entscheidung.`;
 
 const anlaesse = [
-  ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine Wertermittlung ohne Verkaufsinteresse schafft die Grundlage.'],
+  ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine nachvollziehbare Wertermittlung schafft die Grundlage.'],
   ['Halten oder verkaufen?', 'Veränderte Lebenssituation oder Ruhestand: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Ich liefere die wirtschaftliche Einordnung, bevor Sie sich festlegen.'],
   ['Schäden oder Sanierungsstau', 'Feuchtigkeit, Bauschäden oder lange aufgeschobene Instandhaltung: Bevor Sie über Sanierung, Verkauf oder Vermietung entscheiden, ordne ich den baulichen Zustand und den absehbaren Aufwand gemeinsam mit dem Wert ein.'],
-  ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie ohne eigenes Vermittlungsinteresse.'],
+  ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie anhand der Marktdaten und des Zustands der Immobilie.'],
   ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
   ['Mehrere Immobilien in der Familie', 'Mehrere Objekte, unterschiedliche Zustände, unklare Reihenfolge der nächsten Schritte: Ich erfasse den Bestand und ordne Werte und Optionen so, dass die Familie auf einer gemeinsamen Grundlage entscheiden kann.'],
   ['Trennung und Scheidung', 'Sie möchten sich über den Wert der gemeinsamen Immobilie einigen. Für die einvernehmliche Regelung erstelle ich eine Werteinschätzung oder ein Verkehrswertgutachten, bei Bedarf zu zwei Bewertungsstichtagen.'],
@@ -76,8 +76,8 @@ const schema = {
     <div class="hero-grid">
       <div class="hero-text">
         <h1>Immobilien&shy;bewertung für Erben, Familien und private Eigentümer.</h1>
-        <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder familiärer Immobilienbestand: Ich unterstütze private Eigentümer mit Werteinschätzung, Verkehrswertgutachten und sachlicher Entscheidungsgrundlage – ohne Maklerprovision und ohne Verkaufsinteresse.</p>
-        <p class="hero-kern">Ich verkaufe keine Immobilien. Ich schaffe Klarheit über Wert, Optionen und nächste sinnvolle Schritte.</p>
+        <p class="hero-lead">Ob geerbte Immobilie, Verkaufsüberlegung oder mehrere Immobilien in der Familie: Ich erstelle Kurzbewertungen und Verkehrswertgutachten mit Blick auf den baulichen Zustand, auf Wunsch mit Einordnung des Ergebnisses.</p>
+        <p class="hero-kern">Ich ermittle, was Ihre Immobilie wert ist, und zeige, was das für Ihre Entscheidung bedeutet.</p>
         <div class="hero-actions">
           <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
           <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
@@ -103,7 +103,7 @@ const schema = {
       <div class="nachweis-neben">
         <div>
           <dt>Arbeitsweise</dt>
-          <dd>Auf Honorarbasis, ohne Provision und ohne Verkaufsinteresse</dd>
+          <dd>Persönlich vor Ort, Honorar vorab schriftlich vereinbart</dd>
         </div>
         <div>
           <dt>Region</dt>
@@ -154,6 +154,7 @@ const schema = {
             <li>Ausführlicher Ortstermin mit Fotodokumentation</li>
             <li>Vollständiges schriftliches Gutachten (typisch 30–60 Seiten)</li>
             <li>Berücksichtigung von Rechten und Belastungen (z. B. Wohnrecht, Erbbaurecht)</li>
+            <li>Prüfung vorhandener Wohn- und Nutzflächenberechnungen, bei Bedarf mit Korrektur</li>
             <li>Nachvollziehbare Herleitung – geeignet für Gespräche mit Steuerberater, Anwalt oder Makler</li>
             <li>Auf Wunsch erläutere ich Ihnen das Ergebnis am Telefon</li>
           </ul>
@@ -170,7 +171,7 @@ const schema = {
         <div>
           <p class="leistung-rolle">Der Einstieg</p>
           <h3>Kurzbewertung / Marktwertanalyse</h3>
-          <p class="leistung-desc">Für Eigentümer und Familien vor einer Entscheidung: eine fundierte Werteinschätzung mit Blick auf den baulichen Zustand – als Entscheidungsgrundlage, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten. Anders als bei einer Maklereinschätzung hängt mein Honorar nicht davon ab, ob verkauft wird.</p>
+          <p class="leistung-desc">Für Eigentümer und Familien vor einer Entscheidung: eine fundierte Werteinschätzung mit Blick auf den baulichen Zustand – als Entscheidungsgrundlage, Zweitmeinung oder Vorstufe zu einem vollständigen Gutachten.</p>
           <p class="leistung-typisch">Typisch: geerbte Immobilie, Verkaufsüberlegung, Zweitmeinung zu einer Maklereinschätzung, Klärung innerhalb der Familie, Immobilie mit Schäden oder Sanierungsstau.</p>
         </div>
         <div>
@@ -191,7 +192,9 @@ const schema = {
         <div>
           <p class="leistung-rolle">Für mehrere Objekte</p>
           <h3>Strategische Bestandsberatung</h3>
-          <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll. Ohne Interessenkonflikt: „Halten“ ist bei mir eine ebenso mögliche Empfehlung wie „Verkaufen“.</p>
+          <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien – als Erweiterung der reinen Bewertung, wenn Ordnung in den Gesamtbestand gebracht werden soll.</p>
+          <p class="leistung-kern">Ich schaffe Klarheit über Werte, Optionen und nächste sinnvolle Schritte.</p>
+          <p class="leistung-desc">Vergütet werde ich ausschließlich über das vorab vereinbarte Honorar.</p>
           <p class="leistung-typisch">Typisch: mehrere Immobilien in Familienhand, Erbfall mit gemischtem Bestand, Übergabe oder Neuordnung, unklare Reihenfolge der nächsten Schritte.</p>
         </div>
         <ul class="haken">
@@ -206,7 +209,7 @@ const schema = {
       </article>
       </div>
 
-      <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Fahrtkosten im Umkreis von 60 Kilometern sind im Honorar enthalten. Darüber hinaus berechne ich 0,70 € je Kilometer. Behördliche Auskünfte wie Grundbuchauszug oder Flurkarte reiche ich ohne Aufschlag weiter.</p>
+      <p class="preis-fuss">Das genaue Honorar wird vor Beauftragung schriftlich vereinbart. Alle genannten Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Fahrtkosten im Umkreis von 60 Kilometern sind im Honorar enthalten. Darüber hinaus berechne ich 0,70 € je Kilometer. Behördliche Auskünfte wie Grundbuchauszug oder Flurkarte reiche ich ohne Aufschlag weiter. Ist ein neues Aufmaß mit Flächenberechnung nötig, weise ich es im Angebot gesondert aus.</p>
     </div>
   </section>
 
@@ -261,8 +264,8 @@ const schema = {
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Arbeitsweise</p>
-        <h2>Ohne Interessenkonflikt.</h2>
-        <p>Eine Maklereinschätzung kann sinnvoll sein, wenn ein Verkauf bereits feststeht. Wenn aber noch unklar ist, ob verkauft, gehalten, vermietet, verpachtet oder innerhalb der Familie neu geordnet werden soll, braucht es zuerst eine Entscheidungsgrundlage ohne Verkaufsinteresse.</p>
+        <h2>Markt und Bausubstanz im Blick.</h2>
+        <p>Ein Wert allein beantwortet oft nicht die eigentliche Frage. Ob verkauft, gehalten, vermietet oder innerhalb der Familie neu geordnet werden soll, hängt auch vom baulichen Zustand, von absehbaren Kosten und von den wirtschaftlichen Optionen ab.</p>
       </div>
       <ul class="aw-grid">
         <li>
@@ -278,8 +281,8 @@ const schema = {
           <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und arbeite auf Basis nachvollziehbarer Fakten, damit alle Beteiligten dieselbe Grundlage haben.</p>
         </li>
         <li>
-          <h3>Kein Verkaufsgeschäft</h3>
-          <p>Ich vermittle keine Immobilien und erhalte keine Provision. Vergütet werde ich ausschließlich durch das Honorar meiner Auftraggeber. Mein Ergebnis hängt von der Sache ab – nicht davon, ob verkauft wird.</p>
+          <h3>Wirtschaftliche Einordnung</h3>
+          <p>Aus der Volkswirtschaftslehre und als Eigentümerin von Immobilien kenne ich die wirtschaftliche Seite solcher Entscheidungen. Ich ordne ein, was Halten, Vermieten oder Verkaufen für Sie wirtschaftlich bedeutet.</p>
         </li>
         <li>
           <h3>Honorar steht vorher fest</h3>
@@ -290,7 +293,7 @@ const schema = {
           <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Für jedes Verkehrswertgutachten besichtige ich die Immobilie selbst.</p>
         </li>
       </ul>
-      <p class="abgrenzung"><strong>Was ich nicht anbiete:</strong> Maklertätigkeit, Verkaufsvermittlung, Finanzierungsvermittlung und Bewertungen für die Kreditvergabe. Diese beauftragt die Bank selbst. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
+      <p class="abgrenzung"><strong>Gut zu wissen:</strong> Bewertungen für die Kreditvergabe beauftragt die Bank selbst. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
     </div>
   </section>
 
@@ -307,7 +310,6 @@ const schema = {
           <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. Diese Zeit hat mir ein tiefes Verständnis für amtliche Bewertungsmethoden und regionale Marktdaten gegeben – die Grundlage jeder belastbaren Wertermittlung.</p>
           <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Die Volkswirtschaftslehre schärft den Blick für wirtschaftliche Optionen, die Konfliktforschung den sachlichen Umgang mit unterschiedlichen Interessen. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
           <p>Ich lebe selbst in der Region, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
-          <p>Ich arbeite ausschließlich auf Honorarbasis. Das bedeutet: Mein Ergebnis hängt von Ihrer Situation ab – nicht davon, ob Ihre Immobilie verkauft wird.</p>
         </div>
 
         <div class="quali">
