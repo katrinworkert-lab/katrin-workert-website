@@ -7,6 +7,8 @@ import badge from '../assets/dia-badge.png';
 
 const DIA = 'Diplom-Sachverständige (DIA) für die Bewertung von bebauten und unbebauten Grundstücken, für Mieten und Pachten';
 const MAIL = 'kontakt@katrin-workert.de';
+const TEL = '05172 5993813';
+const TEL_LINK = 'tel:+4951725993813';
 const mailto = `mailto:${MAIL}?subject=${encodeURIComponent('Anfrage Immobilienbewertung')}`;
 // Orte des Arbeitsgebiets. Diese Liste steuert Texte, Seitentitel und Angaben für Suchmaschinen.
 // Reihenfolge: Kerngebiet zuerst. Die ersten drei Orte erscheinen im Seitentitel und in der Abzeichen-Leiste.
@@ -47,6 +49,7 @@ const schema = {
   description,
   url: Astro.site.href,
   email: MAIL,
+  telephone: '+49 5172 5993813',
   areaServed: ORTE.map((name) => ({ '@type': 'City', name })),
   founder: {
     '@type': 'Person',
@@ -341,6 +344,10 @@ const schema = {
         </div>
         <dl class="kontakt-daten">
           <div>
+            <dt>Telefon</dt>
+            <dd><a href={TEL_LINK}>{TEL}</a></dd>
+          </div>
+          <div>
             <dt>E-Mail</dt>
             <dd><a href={mailto}>{MAIL}</a></dd>
           </div>
@@ -423,7 +430,11 @@ const schema = {
   </section>
 
   <div class="kontaktleiste" id="kontaktleiste" hidden>
-    <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+    <a class="btn btn-ghost" href={TEL_LINK}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2" /></svg>
+      Anrufen<span class="sr"> unter {TEL}</span>
+    </a>
+    <a class="btn" href="#kontakt"><span class="leiste-lang">Erstgespräch anfragen</span><span class="leiste-kurz" aria-hidden="true">Anfragen</span></a>
   </div>
 
   <script is:inline>
