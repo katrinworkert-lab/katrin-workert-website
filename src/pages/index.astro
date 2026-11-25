@@ -16,14 +16,14 @@ const ORTE = ['Peine', 'Hildesheim', 'Salzgitter', 'Wolfenbüttel', 'Gifhorn', '
 const orteText = ORTE.slice(0, -1).join(', ') + ' und ' + ORTE.at(-1);
 const orteKurz = ORTE.slice(0, 3).join(', ');
 const title = `Immobilienbewertung ${orteKurz} – Katrin Workert`;
-const description = `Immobilienbewertung für Erben, Familien und private Eigentümer: Verkehrswertgutachten und Kurzbewertung in ${orteKurz} und Umgebung. Auf Wunsch Beratung, was der Wert für Ihre Entscheidung bedeutet.`;
+const description = `Immobilienbewertung für Erben, Familien und private Eigentümer: Verkehrswertgutachten und Kurzbewertung in ${orteKurz} und Umgebung. Auf Wunsch Beratung, was der Wert für Ihre weitere Planung bedeutet.`;
 
 const anlaesse = [
   ['Erbschaft mit Immobilie', 'Sie haben eine Immobilie geerbt – allein oder gemeinsam mit anderen. Was ist sie wert, und was ist der nächste sinnvolle Schritt? Eine nachvollziehbare Wertermittlung schafft die Grundlage.'],
   ['Halten oder verkaufen?', 'Veränderte Lebenssituation oder Ruhestand: Sie überlegen, ob Sie eine Immobilie halten, vermieten, verpachten oder verkaufen. Auf Grundlage des Werts vergleiche ich in einer Beratung Ihre Möglichkeiten wirtschaftlich, bevor Sie sich festlegen.'],
   ['Zweitmeinung zur Maklereinschätzung', 'Sie haben bereits eine Einschätzung erhalten und möchten wissen, ob sie realistisch ist. Ich prüfe sie anhand der Marktdaten und des Zustands der Immobilie.'],
   ['Schenkung und Übertragung', 'Sie möchten Immobilien zu Lebzeiten an die nächste Generation übertragen und benötigen dafür eine belastbare Wertgrundlage – auch zur Vorbereitung von Gesprächen mit Steuerberater und Notar.'],
-  ['Mehrere Immobilien in der Familie', 'Mehrere Objekte, unterschiedliche Zustände, unklare Reihenfolge der nächsten Schritte: In der Bestandsberatung erfasse ich den Bestand und ordne Werte und Möglichkeiten so, dass die Familie auf einer gemeinsamen Grundlage entscheiden kann.'],
+  ['Mehrere Immobilien in der Familie', 'Mehrere Objekte, unterschiedliche Zustände, unklare Reihenfolge der nächsten Schritte: In der strategischen Bestandsberatung erfasse ich den Bestand und ordne Werte und Möglichkeiten so, dass die Familie ihr Immobilienvermögen auf einer gemeinsamen Grundlage planen kann.'],
   ['Trennung und Scheidung', 'Sie möchten sich über den Wert der gemeinsamen Immobilie einigen. Für die einvernehmliche Regelung erstelle ich eine Werteinschätzung oder ein Verkehrswertgutachten, bei Bedarf zu zwei Bewertungsstichtagen.'],
   ['Pflichtteilsfragen', 'Für Pflichtteilsansprüche ist der Immobilienwert häufig die zentrale Größe. Ein nachvollziehbares Verkehrswertgutachten gibt allen Beteiligten dieselbe Grundlage für die außergerichtliche Klärung.'],
 ];
@@ -63,7 +63,7 @@ const schema = {
       ['Verkehrswertgutachten', 'Wertermittlung nach § 194 BauGB und ImmoWertV für Erbschaft, Übertragung in der Familie, einvernehmliche Regelungen bei Trennung, Pflichtteilsfragen und Verkaufsverhandlungen.'],
       ['Kurzbewertung / Marktwertanalyse', 'Werteinschätzung als Zweitmeinung, als Grundlage für eine Einigung in der Familie oder als Vorstufe zu einem vollständigen Gutachten.'],
       ['Beratung zu einer Immobilie', 'Wirtschaftlicher Vergleich der Möglichkeiten nach der Bewertung: halten, verkaufen, vermieten oder übertragen.'],
-      ['Bestandsberatung', 'Strukturierte Erfassung und Entscheidungsgrundlage für Familien und Eigentümer mit mehreren Immobilien.'],
+      ['Strategische Bestandsberatung', 'Strukturierte Erfassung und Planungsgrundlage für Familien und Eigentümer mit mehreren Immobilien, etwa für die Übergabe an die nächste Generation.'],
     ].map(([name, d]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name, description: d } })),
   },
   knowsAbout: ['Verkehrswertgutachten', 'Immobilienbewertung', 'Grundstücksbewertung', 'ImmoWertV', 'Immobilie geerbt', 'Erbengemeinschaft', 'Pflichtteil', 'Zugewinnausgleich', 'Marktwertanalyse'],
@@ -76,8 +76,8 @@ const schema = {
     <div class="hero-grid">
       <div class="hero-text">
         <h1>Immobilien&shy;bewertung für Erben, Familien und private Eigentümer.</h1>
-        <p class="hero-lead">Ob geerbte Immobilie, Verkauf oder mehrere Immobilien in der Familie: Ich erstelle Kurzbewertungen und Verkehrswertgutachten. Auf Wunsch berate ich Sie anschließend zu Ihren Möglichkeiten.</p>
-        <p class="hero-kern">Ich ermittle, was Ihre Immobilie wert ist. Auf Wunsch berate ich Sie, was das für Ihre Entscheidung bedeutet.</p>
+        <p class="hero-lead">Ob geerbte Immobilie, Verkauf oder mehrere Immobilien in der Familie: Ich erstelle Kurzbewertungen und Verkehrswertgutachten. Ergänzend biete ich Beratung für einzelne Immobilien und ganze Bestände an.</p>
+        <p class="hero-kern">Ich ermittle, was Ihre Immobilie wert ist. Auf Wunsch berate ich Sie, was das für Ihre weitere Planung bedeutet.</p>
         <div class="hero-actions">
           <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
           <a class="btn btn-ghost" href="#leistungen">Leistungen ansehen</a>
@@ -103,7 +103,7 @@ const schema = {
       <div class="nachweis-neben">
         <div>
           <dt>Arbeitsweise</dt>
-          <dd>Persönlich vor Ort, Honorar vorab schriftlich vereinbart</dd>
+          <dd>Persönlich vor Ort, schriftliches Angebot vor jedem Auftrag</dd>
         </div>
         <div>
           <dt>Region</dt>
@@ -194,14 +194,14 @@ const schema = {
       <div class="leistungen-gruppe">
         <div class="gruppe-kopf">
           <h3>Beratung</h3>
-          <p>Was bedeutet der Wert für Ihre Entscheidung, und welche Möglichkeiten haben Sie? Die Beratung ist ein eigener Auftrag, getrennt vom Gutachten.</p>
+          <p>Was bedeutet der Wert für Ihre weitere Planung, und welche Möglichkeiten haben Sie? Die Beratung ist ein eigener Auftrag, getrennt vom Gutachten.</p>
         </div>
 
         <article class="leistung">
           <div>
             <p class="leistung-rolle">Nach der Bewertung</p>
             <h4>Beratung zu einer Immobilie</h4>
-            <p class="leistung-desc">Für Eigentümer und Familien, die nach der Bewertung wissen möchten, was der Wert für ihre Entscheidung bedeutet und welche Möglichkeiten sie haben. Grundlage kann auch ein vorhandenes Gutachten sein.</p>
+            <p class="leistung-desc">Für Eigentümer und Familien, die nach der Bewertung wissen möchten, wie es mit ihrer Immobilie weitergehen kann und welche Möglichkeiten sie haben. Grundlage kann auch ein vorhandenes Gutachten sein.</p>
             <p class="leistung-typisch">Typisch: geerbte Immobilie, veränderte Lebenssituation, Ruhestand, Vermietung statt Verkauf.</p>
           </div>
           <ul class="haken">
@@ -215,8 +215,8 @@ const schema = {
         <article class="leistung">
           <div>
             <p class="leistung-rolle">Für mehrere Objekte</p>
-            <h4>Bestandsberatung</h4>
-            <p class="leistung-desc">Für Familien oder private Eigentümer mit mehreren Immobilien, wenn Ordnung in den Gesamtbestand gebracht werden soll.</p>
+            <h4>Strategische Bestandsberatung</h4>
+            <p class="leistung-desc">Für Familien und private Eigentümer mit mehreren Immobilien, die ihr Immobilienvermögen langfristig planen möchten, etwa für die Übergabe an die nächste Generation.</p>
             <p class="leistung-kern">Ich schaffe Klarheit über Werte, Optionen und nächste sinnvolle Schritte.</p>
             <p class="leistung-desc">Vergütet werde ich ausschließlich über das vorab vereinbarte Honorar.</p>
             <p class="leistung-typisch">Typisch: mehrere Immobilien in Familienhand, Erbfall mit gemischtem Bestand, Übergabe oder Neuordnung, unklare Reihenfolge der nächsten Schritte.</p>
@@ -234,7 +234,7 @@ const schema = {
       </div>
       </div>
 
-      <p class="preis-fuss">Das genaue Honorar vereinbaren wir vor der Beauftragung schriftlich. Das Angebot nennt Ihnen den Gesamtpreis. Alle Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Beim Verkehrswertgutachten kommt eine Nebenkostenpauschale von 5 bis 10 % des Honorars hinzu. Fahrtkosten berechne ich mit 0,90 € je Kilometer. Behördliche Auskünfte wie Grundbuchauszug oder Flurkarte gebe ich ohne Aufschlag weiter. Ist ein neues Aufmaß mit Flächenberechnung nötig, weise ich es im Angebot gesondert aus.</p>
+      <p class="preis-fuss">Vor jedem Auftrag erhalten Sie ein schriftliches Angebot. Alle Beträge sind Endpreise. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Beim Verkehrswertgutachten richtet sich das Honorar nach dem ermittelten Wert. Den voraussichtlichen Betrag nennt Ihnen das Angebot. Hinzu kommt eine Nebenkostenpauschale von 5 bis 10 % des Honorars. Fahrtkosten berechne ich mit 0,90 € je Kilometer. Behördliche Auskünfte wie Grundbuchauszug oder Flurkarte gebe ich ohne Aufschlag weiter. Ist ein neues Aufmaß mit Flächenberechnung nötig, weise ich es im Angebot gesondert aus.</p>
     </div>
   </section>
 
@@ -250,7 +250,7 @@ const schema = {
           </li>
           <li>
             <h3>Angebot</h3>
-            <p>Sie erhalten ein schriftliches Angebot mit Honorar und Liefertermin. Beides steht fest, bevor Sie mich beauftragen.</p>
+            <p>Sie erhalten ein schriftliches Angebot mit Leistungsumfang, Liefertermin und Honorar. Beim Verkehrswertgutachten richtet sich das Honorar nach dem ermittelten Wert. Im Angebot nenne ich Ihnen den voraussichtlichen Betrag.</p>
           </li>
           <li>
             <h3>Unterlagen und Ortstermin</h3>
@@ -290,7 +290,7 @@ const schema = {
       <div class="section-head">
         <p class="eyebrow">Arbeitsweise</p>
         <h2>Nachvollziehbar bewertet. Verständlich erklärt.</h2>
-        <p>Der Verkehrswert zeigt, wie der Markt Ihre Immobilie sieht. Was er für Ihre Entscheidung bedeutet, klären wir auf Wunsch in einer Beratung.</p>
+        <p>Der Verkehrswert zeigt, wie der Markt Ihre Immobilie sieht. Was er für Ihre weitere Planung bedeutet, klären wir auf Wunsch in einer Beratung.</p>
       </div>
       <ul class="aw-grid">
         <li>
@@ -298,27 +298,27 @@ const schema = {
           <p>Mehrere Jahre habe ich hauptberuflich im Gutachterausschuss für Grundstückswerte gearbeitet, zuletzt als Vorsitzende. Wie amtliche Wertdaten entstehen und wo ihre Grenzen liegen, kenne ich aus eigener Arbeit.</p>
         </li>
         <li>
-          <h3>Sachlich in Familiensituationen</h3>
-          <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und arbeite auf Basis nachvollziehbarer Fakten, damit alle Beteiligten dieselbe Grundlage haben.</p>
+          <h3>Erfahrung mit Gebäudeschäden</h3>
+          <p>Sechs Jahre habe ich ein Unternehmen für Gebäudeschadenbeseitigung geführt. Feuchte- und Gebäudeschäden erkenne ich deshalb bei der Besichtigung und benenne sie. Soweit möglich, beziffere ich die Kosten der Beseitigung überschlägig und berücksichtige sie im Wert. Für Ursachen und genaue Kosten empfehle ich ein Gutachten von Sachverständigen für Bauschäden.</p>
         </li>
         <li>
-          <h3>Ortstermin mit allen Beteiligten</h3>
-          <p>In Familien- und Erbfällen lade ich alle Beteiligten schriftlich und gleichzeitig zum Ortstermin ein. Über jeden Termin führe ich ein Protokoll. So haben alle denselben Stand.</p>
+          <h3>Sachlich in Familiensituationen</h3>
+          <p>Gerade bei Immobilien im Familienbesitz treffen wirtschaftliche Fragen auf unterschiedliche Erwartungen. Ich verstehe die emotionale Bindung an Immobilien – und arbeite auf Basis nachvollziehbarer Fakten, damit alle Beteiligten dieselbe Grundlage haben.</p>
         </li>
         <li>
           <h3>Beratung auf Wunsch</h3>
           <p>Nach der Bewertung vergleiche ich auf Wunsch Ihre Möglichkeiten wirtschaftlich: halten, verkaufen, vermieten oder übertragen. Dabei helfen mir die Volkswirtschaftslehre und der Blick als Eigentümerin. Die Beratung ist ein eigener Auftrag, getrennt vom Gutachten.</p>
         </li>
         <li>
-          <h3>Honorar steht vorher fest</h3>
-          <p>Die Honorare stehen offen auf dieser Seite. Das genaue Honorar vereinbaren wir schriftlich, bevor Sie mich beauftragen. Das erste Gespräch ist kostenlos.</p>
+          <h3>Nachvollziehbares Honorar</h3>
+          <p>Die Honorare stehen auf dieser Seite. Beim Verkehrswertgutachten richtet sich das Honorar nach dem Wert der Immobilie und einer festen Tabelle. Den voraussichtlichen Betrag nenne ich Ihnen vorab im Angebot. Das erste Gespräch ist kostenlos.</p>
         </li>
         <li>
           <h3>Persönlich</h3>
           <p>Von der ersten Anfrage bis zum Ergebnis haben Sie eine Ansprechpartnerin. Für jedes Verkehrswertgutachten besichtige ich die Immobilie selbst.</p>
         </li>
       </ul>
-      <p class="abgrenzung"><strong>Gut zu wissen:</strong> Bewertungen für die Kreditvergabe beauftragt die Bank selbst. Fallen bei der Besichtigung Schäden auf, nenne ich sie. Für Ursachen und genaue Kosten empfehle ich ein Gutachten von Sachverständigen für Bauschäden. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
+      <p class="abgrenzung"><strong>Gut zu wissen:</strong> Bewertungen für die Kreditvergabe beauftragt die Bank selbst. Rechtliche und steuerliche Gesichtspunkte beziehe ich ein, soweit sie für die Bewertung eines Grundstücks von Bedeutung sind – etwa Bauplanungsrecht, Baulasten oder Rechte und Belastungen im Grundbuch. Die rechtliche und steuerliche Beratung im Einzelfall bleibt bei Ihrem Anwalt, Notar oder Steuerberater. Mit ihnen arbeite ich auf Wunsch eng zusammen.</p>
     </div>
   </section>
 
@@ -423,7 +423,7 @@ const schema = {
             <option>Kurzbewertung / Marktwertanalyse</option>
             <option>Verkehrswertgutachten</option>
             <option>Beratung zu einer Immobilie</option>
-            <option>Bestandsberatung</option>
+            <option>Strategische Bestandsberatung</option>
             <option>Noch unklar – im Erstgespräch klären</option>
           </select>
         </div>
