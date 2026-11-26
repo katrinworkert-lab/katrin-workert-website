@@ -28,18 +28,6 @@ const anlaesse = [
   ['Pflichtteilsfragen', 'Für Pflichtteilsansprüche ist der Immobilienwert häufig die zentrale Größe. Ein nachvollziehbares Verkehrswertgutachten gibt allen Beteiligten dieselbe Grundlage für die außergerichtliche Klärung.'],
 ];
 
-const weiterbildungen = [
-  'Die neue ImmoWertV 2021',
-  'Verkehrswertermittlung aus steuerlichen Anlässen',
-  'Grundstücksbezogene Rechte und Belastungen in der Wertermittlung',
-  'Bodenrichtwerte',
-  'Bauschäden und Baumängel in der Wertermittlung',
-  'Statistische Analysemethoden in der Immobilienbewertung',
-  'Hotel- und Gaststättenbewertung',
-  'Bewertung von Spezialimmobilien: Logistikimmobilien',
-  'Bauplanungsrechtliche Zulässigkeit von Vorhaben',
-  'Städtebauliche Umlegung',
-];
 
 const schema = {
   '@context': 'https://schema.org',
@@ -330,26 +318,19 @@ const schema = {
         <h2>Katrin Workert</h2>
         <p class="ueber-titel">{DIA}</p>
         <div class="ueber-text">
-          <p>Immobilien begleiten mich seit meiner Jugend. Aufgewachsen bin ich im Umfeld eines Unternehmens für Gebäudeschadenbeseitigung. Von 2012 bis 2016 war ich dort in Vollzeit tätig, von 2020 bis 2026 habe ich das Unternehmen als Geschäftsführerin geleitet. Zu meinen Aufgaben gehörten unter anderem Kostenkalkulation, WEG-Verwaltung und die Abwicklung mit Gebäude-, Hausrat- und Haftpflichtversicherungen.</p>
-          <p>Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende. In dieser Zeit habe ich die amtliche Wertermittlung und die Ableitung von Wertdaten aus der Praxis kennengelernt.</p>
-          <p>Mein akademischer Hintergrund: Bachelor in Volkswirtschaftslehre, Master in Friedens- und Konfliktforschung. Die Volkswirtschaftslehre schärft den Blick für wirtschaftliche Optionen, die Konfliktforschung den sachlichen Umgang mit unterschiedlichen Interessen. Den Abschluss als {DIA} habe ich in einem berufsbegleitenden Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg erworben – einem viersemestrigen Studiengang mit 400 Unterrichtsstunden.</p>
+          <p>Immobilien begleiten mich seit meiner Jugend. Mehrere Jahre war ich hauptberuflich im Gutachterausschuss für Grundstückswerte tätig und habe dort die amtliche Wertermittlung aus der Praxis kennengelernt. Zuletzt habe ich sechs Jahre lang ein Unternehmen für Gebäudeschadenbeseitigung geführt, in dem Bausubstanz, Schäden und Kosten zum Alltag gehörten.</p>
+          <p>Studiert habe ich Volkswirtschaftslehre sowie Friedens- und Konfliktforschung. Das eine schärft meinen Blick für wirtschaftliche Möglichkeiten, das andere für den sachlichen Umgang mit unterschiedlichen Interessen.</p>
           <p>Ich lebe selbst in der Region, besitze eigene Immobilien und kenne die Fragen meiner Auftraggeber auch aus eigener Erfahrung.</p>
         </div>
 
         <div class="quali">
           <h3>Qualifikationen</h3>
           <ul>
-            <li>{DIA}, berufsbegleitender Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg. <a href="https://www.dia.de/de/657/?credential=0702371f-3c2c-4436-aa83-3ac7802f62c9" target="_blank" rel="noopener">Diplom ansehen<span class="sr"> (öffnet in neuem Tab)</span></a></li>
+            <li>{DIA}, berufsbegleitender Studiengang der Deutschen Immobilien-Akademie an der Universität Freiburg (vier Semester, 400 Unterrichtsstunden). <a href="https://www.dia.de/de/657/?credential=0702371f-3c2c-4436-aa83-3ac7802f62c9" target="_blank" rel="noopener">Diplom ansehen<span class="sr"> (öffnet in neuem Tab)</span></a></li>
             <li>Mehrjährige hauptberufliche Tätigkeit im Gutachterausschuss für Grundstückswerte, zunächst als Sachbearbeiterin, zuletzt als Vorsitzende</li>
             <li>Geschäftsführerin eines Unternehmens für Gebäudeschadenbeseitigung, 2020 bis 2026</li>
-            <li>B.Sc. Volkswirtschaftslehre</li>
-            <li>M.A. Friedens- und Konfliktforschung</li>
-          </ul>
-        </div>
-        <div class="quali">
-          <h3>Weiterbildungen in der Immobilienbewertung (Auswahl)</h3>
-          <ul class="weiterbildung">
-            {weiterbildungen.map((w) => <li>{w}</li>)}
+            <li>B.Sc. Volkswirtschaftslehre, M.A. Friedens- und Konfliktforschung</li>
+            <li>Regelmäßige Fortbildung im Bereich der Immobilienwirtschaft</li>
           </ul>
         </div>
       </div>
@@ -365,7 +346,7 @@ const schema = {
         <p class="eyebrow">Kontakt</p>
         <h2>Sprechen Sie mich an.</h2>
         <div class="kontakt-text">
-          <p>Wenn Sie eine Bewertungsfrage haben oder unsicher sind, welches Vorgehen zu Ihrer Situation passt – sprechen Sie mich gerne an. Ein erstes Gespräch ist kostenlos und unverbindlich, und ich sage Ihnen offen, welche Leistung Sie wirklich brauchen.</p>
+          <p>Ob Sie einen belastbaren Wert brauchen oder planen, wie es mit Ihrem Immobilienbesitz weitergeht: Im kostenlosen und unverbindlichen Erstgespräch klären wir, welche Leistung zu Ihrer Situation passt.</p>
           <p>Tätig in {orteText}. Alle weiteren Orte auf Anfrage.</p>
         </div>
         <dl class="kontakt-daten">
