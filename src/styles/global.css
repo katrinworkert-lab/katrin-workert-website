@@ -313,5 +313,6 @@ h2 { font-size: clamp(2.3rem, 1.5rem + 3vw, 3.7rem); }
 .gruppe-kopf { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(0.5rem, 3vw, 3.5rem); align-items: baseline; padding-block: 1.25rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
 .gruppe-kopf h3 { font-size: clamp(2rem, 1.6rem + 1.4vw, 2.6rem); font-weight: 500; }
 .gruppe-kopf p { color: var(--ink-2); font-size: 1.0625rem; max-width: 40rem; }
+.gruppe-kopf .gruppe-objekte { margin-top: 0.75rem; }
 .leistung h4 { margin: 0; font-family: var(--serif); font-size: clamp(1.7rem, 1.4rem + 1vw, 2.1rem); font-weight: 600; line-height: 1.2; text-wrap: balance; overflow-wrap: break-word; }
 @media (max-width: 40rem) { .gruppe-kopf { grid-template-columns: minmax(0, 1fr); } }
